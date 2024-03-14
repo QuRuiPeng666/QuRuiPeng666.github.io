@@ -6,7 +6,7 @@
   <link href="http://quruipeng666.github.io/atom.xml" rel="self"/>
   
   <link href="http://quruipeng666.github.io/"/>
-  <updated>2024-03-14T10:43:16.684Z</updated>
+  <updated>2024-03-14T13:56:03.082Z</updated>
   <id>http://quruipeng666.github.io/</id>
   
   <author>
@@ -17,18 +17,18 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>Hello World</title>
-    <link href="http://quruipeng666.github.io/2024/03/14/hello-world/"/>
-    <id>http://quruipeng666.github.io/2024/03/14/hello-world/</id>
-    <published>2024-03-14T10:43:16.684Z</published>
-    <updated>2024-03-14T10:43:16.684Z</updated>
+    <title>每日一刷一一C#面试题</title>
+    <link href="http://quruipeng666.github.io/2024/03/14/%E6%AF%8F%E6%97%A5%E4%B8%80%E5%88%B7%E4%B8%80%E4%B8%80C#%E9%9D%A2%E8%AF%95%E9%A2%98/"/>
+    <id>http://quruipeng666.github.io/2024/03/14/%E6%AF%8F%E6%97%A5%E4%B8%80%E5%88%B7%E4%B8%80%E4%B8%80C#%E9%9D%A2%E8%AF%95%E9%A2%98/</id>
+    <published>2024-03-14T13:44:44.061Z</published>
+    <updated>2024-03-14T13:56:03.082Z</updated>
     
-    <content type="html"><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p><h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p><h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p><h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p><h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>]]></content>
+    <content type="html"><![CDATA[<h2 id="C-面试题两道"><a href="#C-面试题两道" class="headerlink" title="C#面试题两道"></a>C#面试题两道</h2><h3 id="值类型和引用类型有什么区别？"><a href="#值类型和引用类型有什么区别？" class="headerlink" title="值类型和引用类型有什么区别？"></a>值类型和引用类型有什么区别？</h3><p>值类型：包含了所有简单类型（整数、浮点、bool、char）、struct、enum。</p><p>继承自System.ValueType</p><p>引用类型：包含了string，object，class，interface，delegate，array</p><p>继承自System.Object</p><p>1.值类型存储在内存栈中，引用类型数据存储在内存堆中，而内存单元中存放的是堆中存放的地址。</p><p>2.值类型存取快，引用类型存取慢。</p><p>3.值类型表示实际数据，引用类型表示指向存储在内存堆中的数据的指针和引用。</p><p>4.栈的内存是自动释放的，堆内存是.NET 中会由 GC 来自动释放。</p><p>5.值类型继承自 System.ValueType,引用类型继承自 System.Object。</p><p>6.值类型直接存放实际的数据，⽽引⽤类型存放的则是数据的地址，即对象的引⽤。</p><p>7.值类型变量直接把变量的值保存在堆栈中，引⽤类型的变量把实际数据的地址保存在堆栈中。</p><h3 id="什么是匿名方法？"><a href="#什么是匿名方法？" class="headerlink" title="什么是匿名方法？"></a>什么是匿名方法？</h3><p>匿名⽅法是⽤作委托的参数的⼀段代码。</p><p>举例子</p><figure class="highlight c#"><table><tr><td class="code"><pre><span class="line"><span class="comment">//匿名方法，例1</span></span><br><span class="line">Func&lt;<span class="built_in">int</span>, <span class="built_in">int</span>&gt; anon = <span class="built_in">delegate</span>(<span class="built_in">int</span> i)</span><br><span class="line">&#123;</span><br><span class="line">i = i + <span class="number">1</span>;</span><br><span class="line"><span class="keyword">return</span> i;</span><br><span class="line">&#125;;</span><br><span class="line"><span class="comment">//输出2</span></span><br><span class="line">Console.WriteLine(anon(<span class="number">1</span>));</span><br><span class="line"><span class="comment">//匿名方法，例2</span></span><br><span class="line">Action&lt;<span class="built_in">int</span>&gt; anon2 = <span class="built_in">delegate</span>(<span class="built_in">int</span> i)</span><br><span class="line">&#123;</span><br><span class="line">i = i + <span class="number">1</span>;</span><br><span class="line">&#125;;</span><br><span class="line"><span class="comment">//输出2</span></span><br><span class="line">Console.WriteLine(anon(<span class="number">1</span>));</span><br></pre></td></tr></table></figure>]]></content>
     
     
       
       
-    <summary type="html">&lt;p&gt;Welcome to &lt;a href=&quot;https://hexo.io/&quot;&gt;Hexo&lt;/a&gt;! This is your very first post. Check &lt;a href=&quot;https://hexo.io/docs/&quot;&gt;documentation&lt;/a&gt; for</summary>
+    <summary type="html">&lt;h2 id=&quot;C-面试题两道&quot;&gt;&lt;a href=&quot;#C-面试题两道&quot; class=&quot;headerlink&quot; title=&quot;C#面试题两道&quot;&gt;&lt;/a&gt;C#面试题两道&lt;/h2&gt;&lt;h3 id=&quot;值类型和引用类型有什么区别？&quot;&gt;&lt;a href=&quot;#值类型和引用类型有什么区别？&quot; cla</summary>
       
     
     
