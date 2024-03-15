@@ -6,7 +6,7 @@
   <link href="http://quruipeng666.github.io/atom.xml" rel="self"/>
   
   <link href="http://quruipeng666.github.io/"/>
-  <updated>2024-03-14T14:03:29.514Z</updated>
+  <updated>2024-03-15T09:18:40.625Z</updated>
   <id>http://quruipeng666.github.io/</id>
   
   <author>
@@ -15,6 +15,27 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>数组的学习</title>
+    <link href="http://quruipeng666.github.io/2024/03/15/%E6%95%B0%E7%BB%84%E7%9A%84%E5%AD%A6%E4%B9%A0/"/>
+    <id>http://quruipeng666.github.io/2024/03/15/%E6%95%B0%E7%BB%84%E7%9A%84%E5%AD%A6%E4%B9%A0/</id>
+    <published>2024-03-15T09:16:13.000Z</published>
+    <updated>2024-03-15T09:18:40.625Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="数组"><a href="#数组" class="headerlink" title="数组"></a>数组</h2><p>是用来存储数据的集合。数组是要指定长度的。</p><h3 id="数组的特性："><a href="#数组的特性：" class="headerlink" title="数组的特性："></a>数组的特性：</h3><p>1.元素类型相同</p><p>2.固定长度</p><p>3.顺序存储的集合</p><h3 id="数组的定义"><a href="#数组的定义" class="headerlink" title="数组的定义"></a>数组的定义</h3><figure class="highlight c#"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line"><span class="comment">//定义int类型的数组</span></span><br><span class="line"><span class="built_in">int</span>[] array1;</span><br><span class="line"></span><br><span class="line"><span class="comment">//直接定义初始化存储</span></span><br><span class="line"><span class="built_in">int</span>[] array2 = <span class="keyword">new</span> <span class="built_in">int</span>[<span class="number">3</span>]&#123;<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>&#125;;</span><br><span class="line"></span><br><span class="line"><span class="comment">//直接写值，array3长度是5并且长度不能变</span></span><br><span class="line"><span class="built_in">int</span>[] array3 = &#123;<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>&#125;;</span><br><span class="line"></span><br><span class="line"><span class="comment">//代表当前这个int型数组只能存储3个int型的变量,默认值是0</span></span><br><span class="line">array1 = <span class="keyword">new</span> <span class="built_in">int</span>[<span class="number">3</span>];</span><br><span class="line"></span><br><span class="line"><span class="comment">//array1的第一个值就是array1[0]</span></span><br><span class="line">array1[<span class="number">0</span>] = <span class="number">5</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">//array1只给分配了三个空间，array1[3]是第四个值，拿不到的，如果这样写在编译期间不会报错，在运行期间会产生一个数组越界的错误。</span></span><br><span class="line"><span class="comment">//array1.Length的值就是3</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//数组的遍历</span></span><br><span class="line"><span class="keyword">for</span>(<span class="built_in">int</span> i=<span class="number">0</span>;i&lt;array3.Length;i++)</span><br><span class="line">&#123;</span><br><span class="line"><span class="comment">//打印array3[i]的值</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//利用foreach遍历</span></span><br><span class="line"><span class="keyword">foreach</span>(<span class="keyword">var</span> v <span class="keyword">in</span> array2)</span><br><span class="line">&#123;</span><br><span class="line"><span class="comment">//打印v的值</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;h2 id=&quot;数组&quot;&gt;&lt;a href=&quot;#数组&quot; class=&quot;headerlink&quot; title=&quot;数组&quot;&gt;&lt;/a&gt;数组&lt;/h2&gt;&lt;p&gt;是用来存储数据的集合。数组是要指定长度的。&lt;/p&gt;
+&lt;h3 id=&quot;数组的特性：&quot;&gt;&lt;a href=&quot;#数组的特性：&quot; class=&quot;hea</summary>
+      
+    
+    
+    
+    
+  </entry>
   
   <entry>
     <title>每日一刷一一Csharp面试题</title>
