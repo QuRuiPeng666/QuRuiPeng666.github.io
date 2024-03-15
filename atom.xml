@@ -6,7 +6,7 @@
   <link href="http://quruipeng666.github.io/atom.xml" rel="self"/>
   
   <link href="http://quruipeng666.github.io/"/>
-  <updated>2024-03-15T09:18:40.625Z</updated>
+  <updated>2024-03-15T15:58:17.244Z</updated>
   <id>http://quruipeng666.github.io/</id>
   
   <author>
@@ -15,6 +15,26 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>arraylist的学习</title>
+    <link href="http://quruipeng666.github.io/2024/03/15/arraylist%E7%9A%84%E5%AD%A6%E4%B9%A0/"/>
+    <id>http://quruipeng666.github.io/2024/03/15/arraylist%E7%9A%84%E5%AD%A6%E4%B9%A0/</id>
+    <published>2024-03-15T15:14:13.000Z</published>
+    <updated>2024-03-15T15:58:17.244Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="arraylist"><a href="#arraylist" class="headerlink" title="arraylist"></a>arraylist</h2><p>一种新的容器，动态数组，关于 ※对象的有序集合※ 。跟数组的作用很接近，都是用来存储对象的，而且都是一个有序的集合。</p><p>数组是固定的长度，对于动态数组来说，就解决了数组只能固定长度的缺点，动态数组有自己的一个 ※自动重新调整大小※ 的能力。</p><p>同时，我们也 ※可以通过这个索引位在动态数组里面去插入，删除等的操作※ 。数组不能够，数组的位置是固定的，我们只能取或改数组，但是不能够在数组中间随意地去插入或者删除新的元素。</p><p>所以我们就知道了动态数组跟数组最大的一个区别。</p><p>在使用方面呢，跟数组的这个形式实际上是很像的。</p><h3 id="动态数组的定义"><a href="#动态数组的定义" class="headerlink" title="动态数组的定义"></a>动态数组的定义</h3><figure class="highlight c#"><table><tr><td class="code"><pre><span class="line"><span class="comment">//对动态数组初始化的定义</span></span><br><span class="line">ArrayList arraylist1 = <span class="keyword">new</span> ArrayList();</span><br><span class="line"></span><br><span class="line"><span class="comment">//插入</span></span><br><span class="line">arraylist1.Add(<span class="number">45</span>);</span><br><span class="line">arraylist1.Add(<span class="number">25</span>);</span><br><span class="line">arraylist1.Add(<span class="number">12</span>);</span><br><span class="line"><span class="comment">//arraylist1[0]就是第一个值，45。依此类推，arraylist1[1]是25，arraylist1[2]是12。</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//第二种方式</span></span><br><span class="line"><span class="built_in">int</span>[] array1 = <span class="keyword">new</span> <span class="built_in">int</span>[<span class="number">4</span>] &#123;<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>&#125;;</span><br><span class="line">arraylist1.AddRange(array1);</span><br><span class="line"><span class="comment">//遍历</span></span><br><span class="line"><span class="keyword">foreach</span>(<span class="keyword">var</span> v <span class="keyword">in</span> arraylist1)</span><br><span class="line">&#123;</span><br><span class="line"><span class="comment">//打印v，结果分别是45，25，12，1，2，3，4。</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//清空，删除全部值</span></span><br><span class="line">arraylist1.Clear();</span><br><span class="line"></span><br><span class="line"><span class="comment">//用arraylist1.Contains(12)可以判断arraylist1里是否包含12这个值，如果包含返回true，反之false。</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//IndexOf()方法返回参数第一次出现的下标值，没找到返回-1</span></span><br><span class="line">ArrayList arraylist2 = <span class="keyword">new</span> ArrayList();</span><br><span class="line"><span class="built_in">int</span>[] array2 = <span class="keyword">new</span> <span class="built_in">int</span>[<span class="number">7</span>] &#123;<span class="number">1</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">12</span>,<span class="number">5</span>,<span class="number">6</span>,<span class="number">12</span>&#125;;</span><br><span class="line">arraylist2.IndexOf(<span class="number">12</span>);  <span class="comment">//3</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//Insert()插入方法,第一参数你从什么索引开始插入，第二参数你要插入什么元素。第一参数索引位得存在，不存在会报错。</span></span><br><span class="line">arraylist2.Insert(<span class="number">3</span>,<span class="number">66</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">//Remove()删除方法，参数就是元素的值，会删除第一次出现的匹配值，如果没有匹配值，相当于没起作用。</span></span><br><span class="line">arraylist2.Remove(<span class="number">12</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">//arraylist2[100] = 12;无法执行，100这个索引没被分配，索引引用不到，产生错误。如果这样写一定保证有那么多元素，如果不够的话只能使用Add的方式。</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//Reverse()逆转顺序方法</span></span><br><span class="line">arraylist2.Reverse();</span><br><span class="line"></span><br><span class="line"><span class="comment">//Sort()排序方法，对于这种数值型的元素，是可以进行排序的。从小到大排序。</span></span><br><span class="line">arraylist2.Sort();</span><br></pre></td></tr></table></figure><h3 id="方法的重载，依据方法传入参数的数量或类型不同，调用的不同功能实现的同名方法"><a href="#方法的重载，依据方法传入参数的数量或类型不同，调用的不同功能实现的同名方法" class="headerlink" title="方法的重载，依据方法传入参数的数量或类型不同，调用的不同功能实现的同名方法"></a>方法的重载，依据方法传入参数的数量或类型不同，调用的不同功能实现的同名方法</h3>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;h2 id=&quot;arraylist&quot;&gt;&lt;a href=&quot;#arraylist&quot; class=&quot;headerlink&quot; title=&quot;arraylist&quot;&gt;&lt;/a&gt;arraylist&lt;/h2&gt;&lt;p&gt;一种新的容器，动态数组，关于 ※对象的有序集合※ 。跟数组的作用很接近，都是用来存储</summary>
+      
+    
+    
+    
+    
+  </entry>
   
   <entry>
     <title>数组的学习</title>
