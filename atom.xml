@@ -6,7 +6,7 @@
   <link href="http://quruipeng666.github.io/atom.xml" rel="self"/>
   
   <link href="http://quruipeng666.github.io/"/>
-  <updated>2024-03-17T07:05:13.544Z</updated>
+  <updated>2024-03-17T08:20:41.483Z</updated>
   <id>http://quruipeng666.github.io/</id>
   
   <author>
@@ -15,6 +15,26 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>哈希table一一Hashtable</title>
+    <link href="http://quruipeng666.github.io/2024/03/17/%E5%93%88%E5%B8%8Ctable%E4%B8%80%E4%B8%80Hashtable/"/>
+    <id>http://quruipeng666.github.io/2024/03/17/%E5%93%88%E5%B8%8Ctable%E4%B8%80%E4%B8%80Hashtable/</id>
+    <published>2024-03-17T08:02:36.000Z</published>
+    <updated>2024-03-17T08:20:41.483Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="Hashtable"><a href="#Hashtable" class="headerlink" title="Hashtable"></a>Hashtable</h2><p>中文全称叫 哈希表。它是一个集合容器。Hashtable类代表了基于键的哈希代码组织起来的 键&#x2F;值 对 的集合。</p><p>每存储一个元素，都有一个键以及这个键所对应的一个值，也叫键&#x2F;值对，它使用键来访问集合中的元素。</p><h3 id="定义"><a href="#定义" class="headerlink" title="定义"></a>定义</h3><figure class="highlight c#"><table><tr><td class="code"><pre><span class="line"><span class="comment">//初始化定义</span></span><br><span class="line">Hashtable ht1 = <span class="keyword">new</span> Hashtable();</span><br><span class="line"></span><br><span class="line"><span class="comment">//类型不安全，key(键)，value(值)都是Object类型。</span></span><br><span class="line">ht1.Add(<span class="string">&quot;1&quot;</span>,<span class="number">100</span>);</span><br><span class="line">ht1.Add(<span class="number">1</span>,<span class="number">99</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">//清空操作，ht1.Clear();</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//ht1.ContainsKey(&quot;1&quot;);判断有没有&quot;1&quot;这个键，如果有返回true，反之false。</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//ht1.Count有几对键值对，这里是2</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//移除操作，ht1.Remove(&quot;1&quot;);参数是key(键)</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//比如我们想取出字符串&quot;1&quot;键的值，就写ht1[&quot;1&quot;]</span></span><br><span class="line"><span class="comment">//比如我们想取出int型1键的值，就写ht1[1]</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//比如我们想修改int型1键的值为999，就写ht1[1]=999;如果有int型1键的话才能改，否则会出现异常。</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//遍历</span></span><br><span class="line">ICollection key=ht1.Keys;<span class="comment">//所有键</span></span><br><span class="line"><span class="keyword">foreach</span>(<span class="keyword">var</span> k <span class="keyword">in</span> key)</span><br><span class="line">&#123;</span><br><span class="line"><span class="comment">//打印ht1[k]，每一个值</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;h2 id=&quot;Hashtable&quot;&gt;&lt;a href=&quot;#Hashtable&quot; class=&quot;headerlink&quot; title=&quot;Hashtable&quot;&gt;&lt;/a&gt;Hashtable&lt;/h2&gt;&lt;p&gt;中文全称叫 哈希表。它是一个集合容器。Hashtable类代表了基于键的哈希代码组织</summary>
+      
+    
+    
+    
+    
+  </entry>
   
   <entry>
     <title>泛型类集合一一List</title>
