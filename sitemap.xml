@@ -2,6 +2,15 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://quruipeng666.github.io/2024/03/17/%E6%B3%9B%E5%9E%8B%E7%B1%BB%E9%9B%86%E5%90%88%E4%B8%80%E4%B8%80List/</loc>
+    
+    <lastmod>2024-03-17</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>http://quruipeng666.github.io/2024/03/15/arraylist%E7%9A%84%E5%AD%A6%E4%B9%A0/</loc>
     
     <lastmod>2024-03-15</lastmod>
@@ -31,7 +40,7 @@
 
   <url>
     <loc>http://quruipeng666.github.io/</loc>
-    <lastmod>2024-03-15</lastmod>
+    <lastmod>2024-03-17</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>

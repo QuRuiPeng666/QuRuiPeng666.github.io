@@ -6,7 +6,7 @@
   <link href="http://quruipeng666.github.io/atom.xml" rel="self"/>
   
   <link href="http://quruipeng666.github.io/"/>
-  <updated>2024-03-15T15:58:17.244Z</updated>
+  <updated>2024-03-17T07:05:13.544Z</updated>
   <id>http://quruipeng666.github.io/</id>
   
   <author>
@@ -15,6 +15,27 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>泛型类集合一一List</title>
+    <link href="http://quruipeng666.github.io/2024/03/17/%E6%B3%9B%E5%9E%8B%E7%B1%BB%E9%9B%86%E5%90%88%E4%B8%80%E4%B8%80List/"/>
+    <id>http://quruipeng666.github.io/2024/03/17/%E6%B3%9B%E5%9E%8B%E7%B1%BB%E9%9B%86%E5%90%88%E4%B8%80%E4%B8%80List/</id>
+    <published>2024-03-17T06:49:06.000Z</published>
+    <updated>2024-03-17T07:05:13.544Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="List"><a href="#List" class="headerlink" title="List"></a>List</h2><p>也是一种容器，泛型类集合。对于List来说，往往会和泛型配合使用，List&lt;&gt;。</p><p>功能和作用类似于 ArrayList。List比ArrayList出现得晚一些，是具有更好的功能。</p><p>ArrayList不是指定固定类型的，实际上它的参数是Object类型，也就是说不管我们使用的是int，string还是我们定义的一个类，拿它作为ArrayList的参数的时候，都必须要通过一个装箱和拆箱的操作，同时还要再完成类型转换。</p><p>装箱，拆箱，类型转换是有一定的性能消耗，如果我们使用List，由于它是一个泛型，用的时候必须要指定某一种具体类型，那么它就无需装箱，拆箱，类型转换。</p><p>由此它类型安全，不会出现不同类型之间所产生的一些异常的问题。</p><h3 id="声明List"><a href="#声明List" class="headerlink" title="声明List"></a>声明List</h3><figure class="highlight c#"><table><tr><td class="code"><pre><span class="line"><span class="comment">//初始化</span></span><br><span class="line">List&lt;<span class="built_in">int</span>&gt; list1 = <span class="keyword">new</span> List&lt;<span class="built_in">int</span>&gt;();</span><br><span class="line"></span><br><span class="line"><span class="comment">//List定义的&lt;int&gt;，只能添加int型元素，类型安全。ArrayList类型不安全。</span></span><br><span class="line">list1.Add(<span class="number">1</span>);</span><br><span class="line">list1.Add(<span class="number">2</span>);</span><br><span class="line">list1.Add(<span class="number">3</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">//list1.Count长度为3</span></span><br><span class="line"><span class="comment">//list1.Clear();  list1.Contains();  list1.Insert();  list1.InsertRange();  list1.Remove();</span></span><br><span class="line"><span class="comment">//通过for循环，foreach也能进行遍历</span></span><br><span class="line"><span class="comment">//list1.Sort();  list1.Reverse();  list1.IndexOf();</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;h2 id=&quot;List&quot;&gt;&lt;a href=&quot;#List&quot; class=&quot;headerlink&quot; title=&quot;List&quot;&gt;&lt;/a&gt;List&lt;/h2&gt;&lt;p&gt;也是一种容器，泛型类集合。对于List来说，往往会和泛型配合使用，List&amp;lt;&amp;gt;。&lt;/p&gt;
+&lt;p&gt;功能和作用类似于</summary>
+      
+    
+    
+    
+    
+  </entry>
   
   <entry>
     <title>arraylist的学习</title>
