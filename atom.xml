@@ -6,7 +6,7 @@
   <link href="http://quruipeng666.github.io/atom.xml" rel="self"/>
   
   <link href="http://quruipeng666.github.io/"/>
-  <updated>2024-03-17T09:21:41.460Z</updated>
+  <updated>2024-03-19T15:15:50.197Z</updated>
   <id>http://quruipeng666.github.io/</id>
   
   <author>
@@ -15,6 +15,27 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>HashSet的学习</title>
+    <link href="http://quruipeng666.github.io/2024/03/19/HashSet%E7%9A%84%E5%AD%A6%E4%B9%A0/"/>
+    <id>http://quruipeng666.github.io/2024/03/19/HashSet%E7%9A%84%E5%AD%A6%E4%B9%A0/</id>
+    <published>2024-03-19T14:37:25.000Z</published>
+    <updated>2024-03-19T15:15:50.197Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="HashSet"><a href="#HashSet" class="headerlink" title="HashSet"></a>HashSet</h2><p>用来存储一个不能重复的，包含着不重复项的无序列表</p><p>需要引用using System.Collections.Generic;</p><h3 id="HashSet的定义"><a href="#HashSet的定义" class="headerlink" title="HashSet的定义"></a>HashSet的定义</h3><figure class="highlight c#"><table><tr><td class="code"><pre><span class="line"><span class="comment">//初始化</span></span><br><span class="line">HashSet&lt;<span class="built_in">int</span>&gt; hs1 = <span class="keyword">new</span> HashSet&lt;<span class="built_in">int</span>&gt;();</span><br><span class="line">HashSet&lt;<span class="built_in">int</span>&gt; hs2 = <span class="keyword">new</span> HashSet&lt;<span class="built_in">int</span>&gt;();</span><br><span class="line"></span><br><span class="line"><span class="comment">//添加值到hs1</span></span><br><span class="line">hs1.Add(<span class="number">1</span>);</span><br><span class="line">hs1.Add(<span class="number">2</span>);</span><br><span class="line"><span class="comment">//加了两次2，实际上相当于加一次2</span></span><br><span class="line">hs1.Add(<span class="number">2</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">//长度hs1.Count</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//移除</span></span><br><span class="line">hs1.Remove();</span><br><span class="line"></span><br><span class="line"><span class="comment">//包含</span></span><br><span class="line">hs1.Contains();</span><br><span class="line"></span><br><span class="line"><span class="comment">//清空</span></span><br><span class="line">hs1.Clear();</span><br><span class="line"></span><br><span class="line"><span class="comment">//给hs2添加值</span></span><br><span class="line">hs2.Add(<span class="number">2</span>);</span><br><span class="line">hs2.Add(<span class="number">3</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">//交集，hs1只剩2</span></span><br><span class="line">hs1.IntersectWith(hs2);</span><br><span class="line"></span><br><span class="line"><span class="comment">//此时打印hs1是类型</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//遍历</span></span><br><span class="line"><span class="keyword">foreach</span>(<span class="keyword">var</span> v <span class="keyword">in</span> hs1)</span><br><span class="line">&#123;</span><br><span class="line"><span class="comment">//打印v</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//并集</span></span><br><span class="line">hs1.UnionWith(hs2);</span><br><span class="line"></span><br><span class="line"><span class="comment">//差集，hs2里有的元素，在hs1里如果有就把它去掉，没有无操作</span></span><br><span class="line">hs1.ExceptWith(hs2);</span><br><span class="line"></span><br><span class="line"><span class="comment">//对称差集，把hs1中和hs2中交集的部分去掉，只留下剩下的那个元素，无论hs1调用还是hs2调用，作用都一样</span></span><br><span class="line">hs1.SymmetricExceptWith(hs2);</span><br></pre></td></tr></table></figure><h3 id="了解"><a href="#了解" class="headerlink" title="了解"></a>了解</h3><p>它是另外一种容器，主要的作用可以用来帮助我们做刚才的集合的操作，并且我们在使用的时候，如果你的元素是唯一的不重复的，比如排名，是不重复的，对于这样的需求，我们可以考虑是否使用set来帮助我们进行存储，但是我们要知道如果使用List，还可以很方便的使用它的排序。set本身没有排序。</p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;h2 id=&quot;HashSet&quot;&gt;&lt;a href=&quot;#HashSet&quot; class=&quot;headerlink&quot; title=&quot;HashSet&quot;&gt;&lt;/a&gt;HashSet&lt;/h2&gt;&lt;p&gt;用来存储一个不能重复的，包含着不重复项的无序列表&lt;/p&gt;
+&lt;p&gt;需要引用using System.C</summary>
+      
+    
+    
+    
+    
+  </entry>
   
   <entry>
     <title>Unity面试题基础</title>
