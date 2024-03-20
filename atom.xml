@@ -1,20 +1,41 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
-  <title>主人忘归客不发</title>
+  <title>GDDA</title>
   
-  <subtitle>欲语迟</subtitle>
+  <subtitle>GameDesignDreamAchieve</subtitle>
   <link href="http://quruipeng666.github.io/atom.xml" rel="self"/>
   
   <link href="http://quruipeng666.github.io/"/>
-  <updated>2024-03-20T13:46:34.593Z</updated>
+  <updated>2024-03-20T14:12:23.195Z</updated>
   <id>http://quruipeng666.github.io/</id>
   
   <author>
-    <name>GameDesignerQ</name>
+    <name>GDQLF</name>
     
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>实现队列</title>
+    <link href="http://quruipeng666.github.io/2024/03/20/%E5%AE%9E%E7%8E%B0%E9%98%9F%E5%88%97/"/>
+    <id>http://quruipeng666.github.io/2024/03/20/%E5%AE%9E%E7%8E%B0%E9%98%9F%E5%88%97/</id>
+    <published>2024-03-20T13:47:51.000Z</published>
+    <updated>2024-03-20T14:12:23.195Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="队列的实现"><a href="#队列的实现" class="headerlink" title="队列的实现"></a>队列的实现</h2><p>主要使用链表实现。这是简单的实现，其他的Clear,Contains等等方法自己实践</p><h3 id="Unity中用VS编译脚本代码实现"><a href="#Unity中用VS编译脚本代码实现" class="headerlink" title="Unity中用VS编译脚本代码实现"></a>Unity中用VS编译脚本代码实现</h3><figure class="highlight c#"><table><tr><td class="code"><pre><span class="line"><span class="keyword">using</span> System.Collections;</span><br><span class="line"><span class="keyword">using</span> System.Collections.Generic;</span><br><span class="line"><span class="keyword">using</span> UnityEngine;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> 实现队列 : <span class="title">MonoBehaviour</span></span><br><span class="line">&#123;</span><br><span class="line"><span class="keyword">class</span> <span class="title">MyQueue</span></span><br><span class="line">&#123;</span><br><span class="line"><span class="comment">//定义队中元素的数据结构</span></span><br><span class="line"><span class="keyword">class</span> <span class="title">QueueData</span></span><br><span class="line">&#123;</span><br><span class="line"><span class="comment">//队中元素的值</span></span><br><span class="line"><span class="keyword">public</span> QueueData nextItem;</span><br><span class="line"><span class="comment">//队中元素类型</span></span><br><span class="line"><span class="keyword">public</span> <span class="built_in">object</span> topData;</span><br><span class="line"></span><br><span class="line"><span class="comment">//构造函数，一般作用是让参数传进来给这个定义数据结构的变量赋值</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="title">QueueData</span>(<span class="params">QueueData last, <span class="built_in">object</span> data</span>)</span></span><br><span class="line">&#123;</span><br><span class="line"><span class="comment">//上一个进的元素（先出队）的下一个元素是当前新进的元素</span></span><br><span class="line">last.nextItem = <span class="keyword">this</span>;</span><br><span class="line"><span class="keyword">this</span>.topData = data;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//重构</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="title">QueueData</span>(<span class="params"><span class="built_in">object</span> data</span>)</span></span><br><span class="line">&#123;</span><br><span class="line"><span class="keyword">this</span>.topData = data;</span><br><span class="line">&#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//定义队首元素</span></span><br><span class="line">QueueData top;</span><br><span class="line"><span class="comment">//当前定义的上一个元素</span></span><br><span class="line">QueueData lastData;</span><br><span class="line"></span><br><span class="line"><span class="comment">//入队Enqueue方法</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">Enqueue</span>(<span class="params"><span class="built_in">object</span> data</span>)</span></span><br><span class="line">&#123;</span><br><span class="line"><span class="comment">//判断当前是第一个入队的元素</span></span><br><span class="line"><span class="keyword">if</span>(top == <span class="literal">null</span>)</span><br><span class="line">&#123;</span><br><span class="line"><span class="comment">//队首,更新</span></span><br><span class="line">top = <span class="keyword">new</span> QueueData(data);</span><br><span class="line"><span class="comment">//把队首赋值给当前定义的上一个元素</span></span><br><span class="line">lastData = top;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//不是第一个入队的元素，不再是队首元素</span></span><br><span class="line"><span class="keyword">else</span></span><br><span class="line">&#123;</span><br><span class="line"><span class="comment">//每一次新进的元素都会更新lastData</span></span><br><span class="line">lastData = <span class="keyword">new</span> QueueData(top, data);</span><br><span class="line">&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//出队Dequeue方法，注意没参数，返回object型</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="built_in">object</span> <span class="title">Dequeue</span>()</span></span><br><span class="line">&#123;</span><br><span class="line"><span class="comment">//队首元素的值，用来出队的</span></span><br><span class="line"><span class="built_in">object</span> rsl = top.topData;</span><br><span class="line"><span class="comment">//入队的地方记录了nextItem，它的下一个item就自然变成了下一个要出的元素，就把它放在队首了</span></span><br><span class="line">top = top.nextItem;</span><br><span class="line"><span class="keyword">return</span> rsl;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//简单使用下</span></span><br><span class="line"><span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">Start</span>()</span></span><br><span class="line">&#123;</span><br><span class="line"><span class="comment">//定义初始化</span></span><br><span class="line">MyQueue mq = <span class="keyword">new</span> MyQueue();</span><br><span class="line"></span><br><span class="line"><span class="comment">//入队</span></span><br><span class="line">mq.Enqueue(<span class="number">1</span>);</span><br><span class="line">mq.Enqueue(<span class="number">2</span>);</span><br><span class="line">mq.Enqueue(<span class="number">3</span>);</span><br><span class="line">mq.Enqueue(<span class="number">4</span>);</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">//出队并打印</span></span><br><span class="line">Debug.Log(mq.Dequeue());   <span class="comment">//1</span></span><br><span class="line">Debug.Log(mq.Dequeue());   <span class="comment">//2</span></span><br><span class="line">Debug.Log(mq.Dequeue());   <span class="comment">//3</span></span><br><span class="line">Debug.Log(mq.Dequeue());   <span class="comment">//4</span></span><br><span class="line">&#125;</span><br><span class="line">&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;h2 id=&quot;队列的实现&quot;&gt;&lt;a href=&quot;#队列的实现&quot; class=&quot;headerlink&quot; title=&quot;队列的实现&quot;&gt;&lt;/a&gt;队列的实现&lt;/h2&gt;&lt;p&gt;主要使用链表实现。这是简单的实现，其他的Clear,Contains等等方法自己实践&lt;/p&gt;
+&lt;h3 id=&quot;Uni</summary>
+      
+    
+    
+    
+    
+  </entry>
   
   <entry>
     <title>实现堆栈</title>
