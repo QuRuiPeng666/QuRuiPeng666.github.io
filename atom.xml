@@ -6,7 +6,7 @@
   <link href="http://quruipeng666.github.io/atom.xml" rel="self"/>
   
   <link href="http://quruipeng666.github.io/"/>
-  <updated>2024-03-20T13:04:45.770Z</updated>
+  <updated>2024-03-20T13:22:50.202Z</updated>
   <id>http://quruipeng666.github.io/</id>
   
   <author>
@@ -15,6 +15,27 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>队列的学习</title>
+    <link href="http://quruipeng666.github.io/2024/03/20/%E9%98%9F%E5%88%97%E7%9A%84%E5%AD%A6%E4%B9%A0/"/>
+    <id>http://quruipeng666.github.io/2024/03/20/%E9%98%9F%E5%88%97%E7%9A%84%E5%AD%A6%E4%B9%A0/</id>
+    <published>2024-03-20T13:06:57.000Z</published>
+    <updated>2024-03-20T13:22:50.202Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="队列"><a href="#队列" class="headerlink" title="队列"></a>队列</h2><p>先进先出，后进后出。（队列的队指的是排队，先来的先走，后来的后走）</p><p>需要引用using System.Collections;（object型）<br>需要引用using System.Collections.Generic;（泛型）</p><h3 id="Queue的定义"><a href="#Queue的定义" class="headerlink" title="Queue的定义"></a>Queue的定义</h3><figure class="highlight c#"><table><tr><td class="code"><pre><span class="line"><span class="comment">//object型的队列定义及初始化，object型需要装箱拆箱类型转换，会有一定的效率损失</span></span><br><span class="line">Queue queue = <span class="keyword">new</span> Queue();</span><br><span class="line"></span><br><span class="line"><span class="comment">//泛型队列定义</span></span><br><span class="line">Queue&lt;<span class="built_in">int</span>&gt; queue2 = <span class="keyword">new</span> Queue&lt;<span class="built_in">int</span>&gt;();</span><br><span class="line"><span class="comment">//往队列中加元素，入队操作</span></span><br><span class="line">queue.EnQueue(<span class="string">&quot;1&quot;</span>);</span><br><span class="line"></span><br><span class="line">queue2.EnQueue(<span class="number">1</span>);</span><br><span class="line">queue2.EnQueue(<span class="number">2</span>);</span><br><span class="line">queue2.EnQueue(<span class="number">3</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">//队首元素先离，队列中排最前边（最先进来的）的那个元素先出了，离队操作，此处1先离开</span></span><br><span class="line"><span class="built_in">int</span> v = queue2.Dequeue();</span><br><span class="line"></span><br><span class="line"><span class="comment">//清空</span></span><br><span class="line">queue2.Clear();</span><br><span class="line"></span><br><span class="line"><span class="comment">//判断入参的值v是否在队列中</span></span><br><span class="line">queue2.Contains(v);</span><br><span class="line"></span><br><span class="line"><span class="comment">//目前队列有几个元素queue2.Count</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//遍历</span></span><br><span class="line"><span class="keyword">foreach</span>(<span class="keyword">var</span> w <span class="keyword">in</span> queue2)</span><br><span class="line">&#123;</span><br><span class="line"><span class="comment">//打印w</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><h3 id="实际应用"><a href="#实际应用" class="headerlink" title="实际应用"></a>实际应用</h3><p>对象池，ObjectPool，一开始会预先加载一定的对象在队列里，用的时候出队，用完再入队。这样是一个循环使用的状态。</p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;h2 id=&quot;队列&quot;&gt;&lt;a href=&quot;#队列&quot; class=&quot;headerlink&quot; title=&quot;队列&quot;&gt;&lt;/a&gt;队列&lt;/h2&gt;&lt;p&gt;先进先出，后进后出。（队列的队指的是排队，先来的先走，后来的后走）&lt;/p&gt;
+&lt;p&gt;需要引用using System.Collections;</summary>
+      
+    
+    
+    
+    
+  </entry>
   
   <entry>
     <title>堆栈的学习</title>
