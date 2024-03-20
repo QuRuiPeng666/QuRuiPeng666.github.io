@@ -6,7 +6,7 @@
   <link href="http://quruipeng666.github.io/atom.xml" rel="self"/>
   
   <link href="http://quruipeng666.github.io/"/>
-  <updated>2024-03-20T13:22:50.202Z</updated>
+  <updated>2024-03-20T13:46:34.593Z</updated>
   <id>http://quruipeng666.github.io/</id>
   
   <author>
@@ -15,6 +15,26 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>实现堆栈</title>
+    <link href="http://quruipeng666.github.io/2024/03/20/%E5%AE%9E%E7%8E%B0%E5%A0%86%E6%A0%88/"/>
+    <id>http://quruipeng666.github.io/2024/03/20/%E5%AE%9E%E7%8E%B0%E5%A0%86%E6%A0%88/</id>
+    <published>2024-03-20T13:24:12.000Z</published>
+    <updated>2024-03-20T13:46:34.593Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="堆栈的实现"><a href="#堆栈的实现" class="headerlink" title="堆栈的实现"></a>堆栈的实现</h2><h3 id="Unity中用VS编译脚本代码实现"><a href="#Unity中用VS编译脚本代码实现" class="headerlink" title="Unity中用VS编译脚本代码实现"></a>Unity中用VS编译脚本代码实现</h3><figure class="highlight c#"><table><tr><td class="code"><pre><span class="line"><span class="keyword">using</span> System.Collections;</span><br><span class="line"><span class="keyword">using</span> System.Collections.Generic;</span><br><span class="line"><span class="keyword">using</span> UnityEngine;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> 实现栈 : <span class="title">MonoBehaviour</span></span><br><span class="line">&#123;</span><br><span class="line"><span class="keyword">class</span> <span class="title">MyStack</span></span><br><span class="line">&#123;</span><br><span class="line"><span class="comment">//定义栈中元素的数据结构</span></span><br><span class="line"><span class="keyword">class</span> <span class="title">StackData</span></span><br><span class="line">&#123;</span><br><span class="line"><span class="comment">//栈中元素的值</span></span><br><span class="line"><span class="keyword">public</span> StackData nextItem;</span><br><span class="line"><span class="comment">//栈中元素类型</span></span><br><span class="line"><span class="keyword">public</span> <span class="built_in">object</span> topData;</span><br><span class="line"></span><br><span class="line"><span class="comment">//构造函数，一般作用是让参数传进来给这个定义数据结构的变量赋值</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="title">StackData</span>(<span class="params">StackData next, <span class="built_in">object</span> data</span>)</span></span><br><span class="line">&#123;</span><br><span class="line"><span class="keyword">this</span>.nextItem = next;</span><br><span class="line"><span class="keyword">this</span>.topData = data;</span><br><span class="line">&#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//定义一个栈顶元素</span></span><br><span class="line">StackData top;</span><br><span class="line"></span><br><span class="line"><span class="comment">//入栈Push方法</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">Push</span>(<span class="params"><span class="built_in">object</span> data</span>)</span></span><br><span class="line">&#123;</span><br><span class="line"><span class="comment">//首先生成这个栈中元素，栈顶元素的更新</span></span><br><span class="line">top = <span class="keyword">new</span> StackData(top, Data);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//出栈Pop方法，注意没参数，返回object型</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="built_in">object</span> <span class="title">Pop</span>()</span></span><br><span class="line">&#123;</span><br><span class="line"><span class="comment">//栈顶元素的值</span></span><br><span class="line"><span class="built_in">object</span> rsl = top.topData;</span><br><span class="line">top = top.nextItem;</span><br><span class="line"><span class="keyword">return</span> rsl;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//简单使用下</span></span><br><span class="line"><span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">Start</span>()</span></span><br><span class="line">&#123;</span><br><span class="line"><span class="comment">//定义初始化</span></span><br><span class="line">MyStack ms = <span class="keyword">new</span> MyStack();</span><br><span class="line"></span><br><span class="line"><span class="comment">//入栈</span></span><br><span class="line">ms.Push(<span class="number">1</span>);</span><br><span class="line">ms.Push(<span class="number">2</span>);</span><br><span class="line">ms.Push(<span class="number">3</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">//出栈并打印</span></span><br><span class="line">Debug.Log(ms.Pop());   <span class="comment">//3</span></span><br><span class="line">Debug.Log(ms.Pop());   <span class="comment">//2</span></span><br><span class="line">Debug.Log(ms.Pop());   <span class="comment">//1</span></span><br><span class="line">&#125;</span><br><span class="line">&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;h2 id=&quot;堆栈的实现&quot;&gt;&lt;a href=&quot;#堆栈的实现&quot; class=&quot;headerlink&quot; title=&quot;堆栈的实现&quot;&gt;&lt;/a&gt;堆栈的实现&lt;/h2&gt;&lt;h3 id=&quot;Unity中用VS编译脚本代码实现&quot;&gt;&lt;a href=&quot;#Unity中用VS编译脚本代码实现&quot; class</summary>
+      
+    
+    
+    
+    
+  </entry>
   
   <entry>
     <title>队列的学习</title>
