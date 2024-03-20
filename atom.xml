@@ -6,7 +6,7 @@
   <link href="http://quruipeng666.github.io/atom.xml" rel="self"/>
   
   <link href="http://quruipeng666.github.io/"/>
-  <updated>2024-03-20T12:43:14.663Z</updated>
+  <updated>2024-03-20T13:04:45.770Z</updated>
   <id>http://quruipeng666.github.io/</id>
   
   <author>
@@ -15,6 +15,27 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>堆栈的学习</title>
+    <link href="http://quruipeng666.github.io/2024/03/20/%E5%A0%86%E6%A0%88%E7%9A%84%E5%AD%A6%E4%B9%A0/"/>
+    <id>http://quruipeng666.github.io/2024/03/20/%E5%A0%86%E6%A0%88%E7%9A%84%E5%AD%A6%E4%B9%A0/</id>
+    <published>2024-03-20T12:47:23.000Z</published>
+    <updated>2024-03-20T13:04:45.770Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="堆栈"><a href="#堆栈" class="headerlink" title="堆栈"></a>堆栈</h2><p>一种数据容器，也可以叫对象集合。Stack，先进后出，后进先出的对象集合。跟队列的先进先出，后进后出相反</p><h3 id="Stack的定义"><a href="#Stack的定义" class="headerlink" title="Stack的定义"></a>Stack的定义</h3><figure class="highlight c#"><table><tr><td class="code"><pre><span class="line"><span class="comment">//初始化定义</span></span><br><span class="line">Stack st1 = <span class="keyword">new</span> Stack();</span><br><span class="line"></span><br><span class="line"><span class="comment">//压进元素，入栈操作，在栈的底部，参数为object型，类型不安全</span></span><br><span class="line">st1.Push(<span class="string">&quot;a&quot;</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">//栈的倒二位，此时在栈的顶部，理解为往杯子里放海绵垫，比如拿出海绵垫时，只能先拿最上面的（后进先出）</span></span><br><span class="line">st1.Push(<span class="string">&quot;b&quot;</span>);</span><br><span class="line"></span><br><span class="line">st1.Push(<span class="string">&quot;c&quot;</span>);</span><br><span class="line">st1.Push(<span class="string">&quot;d&quot;</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">//弹出元素，出栈操作，出来类型是object型，强转为初始定义的string型，再用v接收，此处v的值是d</span></span><br><span class="line"><span class="built_in">string</span> v = (<span class="built_in">string</span>)st1.Pop();</span><br><span class="line"></span><br><span class="line"><span class="comment">//st1.Count表示目前栈中元素的数量</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//拿到当前在栈顶元素的值，并不出栈，不执行Pop操作</span></span><br><span class="line">v = (<span class="built_in">string</span>)st1.Peek();</span><br><span class="line"></span><br><span class="line"><span class="comment">//清空</span></span><br><span class="line">st1.Clear();</span><br><span class="line"></span><br><span class="line"><span class="comment">//判断当前入参v的值是否存在于当前栈中</span></span><br><span class="line">st1.Contains(v);</span><br><span class="line"></span><br><span class="line"><span class="comment">//遍历</span></span><br><span class="line"><span class="keyword">foreach</span>(<span class="keyword">var</span> w <span class="keyword">in</span> st1)</span><br><span class="line">&#123;</span><br><span class="line"><span class="comment">//打印w</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;h2 id=&quot;堆栈&quot;&gt;&lt;a href=&quot;#堆栈&quot; class=&quot;headerlink&quot; title=&quot;堆栈&quot;&gt;&lt;/a&gt;堆栈&lt;/h2&gt;&lt;p&gt;一种数据容器，也可以叫对象集合。Stack，先进后出，后进先出的对象集合。跟队列的先进先出，后进后出相反&lt;/p&gt;
+&lt;h3 id=&quot;Stack</summary>
+      
+    
+    
+    
+    
+  </entry>
   
   <entry>
     <title>链表的学习</title>
