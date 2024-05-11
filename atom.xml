@@ -6,7 +6,7 @@
   <link href="http://quruipeng666.github.io/atom.xml" rel="self"/>
   
   <link href="http://quruipeng666.github.io/"/>
-  <updated>2024-03-21T10:08:43.138Z</updated>
+  <updated>2024-05-11T09:43:05.784Z</updated>
   <id>http://quruipeng666.github.io/</id>
   
   <author>
@@ -15,6 +15,26 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>模拟经营项目的笔记0511</title>
+    <link href="http://quruipeng666.github.io/2024/05/11/%E6%A8%A1%E6%8B%9F%E7%BB%8F%E8%90%A5%E9%A1%B9%E7%9B%AE%E7%9A%84%E7%AC%94%E8%AE%B00511/"/>
+    <id>http://quruipeng666.github.io/2024/05/11/%E6%A8%A1%E6%8B%9F%E7%BB%8F%E8%90%A5%E9%A1%B9%E7%9B%AE%E7%9A%84%E7%AC%94%E8%AE%B00511/</id>
+    <published>2024-05-11T09:08:35.000Z</published>
+    <updated>2024-05-11T09:43:05.784Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="创建新项目"><a href="#创建新项目" class="headerlink" title="创建新项目"></a>创建新项目</h2><p>本项目要求Unity引擎 编辑器版本 至少在2021.2.10f1c1以上，创建项目的时候要选中此编辑器版本才可生效</p><p>会使用到2D(URP)模板，但建议从2D核心模板开始创建项目，这样还可以学习将当前2D项目升级到通用渲染管线URP</p><h3 id="Unity2021-2-新版界面介绍（工具栏使用"><a href="#Unity2021-2-新版界面介绍（工具栏使用" class="headerlink" title="Unity2021.2 新版界面介绍（工具栏使用"></a>Unity2021.2 新版界面介绍（工具栏使用</h3><p>使用2021.2.10f1c1这样相对来说较新的版本，打开后映入眼帘的是工具栏的样式和位置，那些控制移动的图标(快捷键QWERT,可以直接隐藏，选择Scene窗口再按下空格键弹出小窗口，在里边可以选择显示哪些组件功能例如我不希望Tools显示，点击眼睛关掉即可)，原先应该在工具栏最左侧的位置，现在变成了活动可移动的窗口，拖动也可让它重回原先的位置</p><p>其中的一个按钮展开可以选择图片中心点为移动点或图片锚点为移动点，另一按钮展开为全局的移动旋转或局部的移动旋转可供显示切换</p><p>Scene场景打开灯光显示，下拉菜单打开后处理，天空盒，雾，粒子系统等等，Scene场景摄像机，网格的显示</p><p>Search功能可以搜索，例如我可以在场景当中搜索我想要的关键字，例如我调用了哪个Prefab哪个文件</p><h3 id="Package-Manager（包管理"><a href="#Package-Manager（包管理" class="headerlink" title="Package Manager（包管理"></a>Package Manager（包管理</h3><p>Window–&gt;Package Manager，打开窗口后选择Packages:In Project，可以看到当前项目中以及加载好的组件</p><p>2021.2或以上版本会出现Features分类，里边会包括目前已经内置安装好的功能，我们对里边的2D Tilemap Extras插件不陌生，里边包括规则的瓦片，动态的瓦片这些，Unity已经正式推出并包含在2D主题包当中了</p><p>可以看到有很多上箭头，我们可以选择需要的将它升级，选择不需要的将它Remove移除</p><p>没使用Plastic SCM进行版本管理，可以直接将Version Control移除</p><p>没使用可视化编程，将Visual Scripting移除，这样也可以将包体减小，加载代码快一些</p><p>如果用的Visual Studio最新版编写代码，将Visual Studio Editor升到最新，Rider同理</p><p>Timeline，Test Framework都是需要的，直接更新到最新（需要预览版本preview可以点齿轮Advanced Project Settings</p><h3 id="导入素材，小工具："><a href="#导入素材，小工具：" class="headerlink" title="导入素材，小工具："></a>导入素材，小工具：</h3><figure class="highlight c#"><table><tr><td class="code"><pre><span class="line">接下篇</span><br></pre></td></tr></table></figure>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;h2 id=&quot;创建新项目&quot;&gt;&lt;a href=&quot;#创建新项目&quot; class=&quot;headerlink&quot; title=&quot;创建新项目&quot;&gt;&lt;/a&gt;创建新项目&lt;/h2&gt;&lt;p&gt;本项目要求Unity引擎 编辑器版本 至少在2021.2.10f1c1以上，创建项目的时候要选中此编辑器版本才可生效</summary>
+      
+    
+    
+    
+    
+  </entry>
   
   <entry>
     <title>第一章.数据结构绪论一一《大话数据结构》</title>
