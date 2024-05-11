@@ -6,7 +6,7 @@
   <link href="http://quruipeng666.github.io/atom.xml" rel="self"/>
   
   <link href="http://quruipeng666.github.io/"/>
-  <updated>2024-05-11T09:43:05.784Z</updated>
+  <updated>2024-05-11T10:44:47.527Z</updated>
   <id>http://quruipeng666.github.io/</id>
   
   <author>
@@ -15,6 +15,26 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>笔记0511-2</title>
+    <link href="http://quruipeng666.github.io/2024/05/11/%E7%AC%94%E8%AE%B00511-2/"/>
+    <id>http://quruipeng666.github.io/2024/05/11/%E7%AC%94%E8%AE%B00511-2/</id>
+    <published>2024-05-11T09:50:01.000Z</published>
+    <updated>2024-05-11T10:44:47.527Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="模拟经营项目"><a href="#模拟经营项目" class="headerlink" title="模拟经营项目"></a>模拟经营项目</h2><h3 id="导入素材"><a href="#导入素材" class="headerlink" title="导入素材"></a>导入素材</h3><p>在导入的素材里的Art文件夹里，例如Maps里文件名后加@20，意思是瓦片地图可以被切割的，像素单位是20，也就是一个格子里有20个像素</p><p>另外是正常的图片，还有一种是家具，是多图片构成的图片素材，切割的时候使用自动切割，单独去使用里边的图片</p><h3 id="图片设置方式"><a href="#图片设置方式" class="headerlink" title="图片设置方式"></a>图片设置方式</h3><p>以地图为例，选中它，再将Sprite Mode改成Multiple，也就是多图片构成的，Pixels Per Unit设置为20，Filter Mode改成Point(no filter)</p><p>Compression改成None，这样会适应我们要做的像素游戏。Max Size尽量不要超过2048，我们的图片是640×460，那么1024就足够了，完成后点击Apply</p><p>如何将这种图片设置方式定为预设，直接应用就行了呢？添加预设的方法是右上角问号旁边的设置按钮，点击就是选择一个预设，可以将当前的预制保存下Save，找到个文件夹设置叫Slice20，再多选要设置的图片文件，设置里选Slice20再点Apply</p><h3 id="切割图片成瓦片"><a href="#切割图片成瓦片" class="headerlink" title="切割图片成瓦片"></a>切割图片成瓦片</h3><p>点击Sprite Editor–&gt;Slice，Type选Grid By Cell Size（按照尺寸)，项目是按照20的瓦片，Pixel Size的X,Y都为20，锚点位置Pivot保持在Center（图片中心）就可以了</p><p>下边有个模式Method，里边的Smart会切割并保留我们仅有图片像素的位置，那么空白的位置将不被保留，不像以前即使你没有画任何的像素在空格的位置，它也会切割一个瓦片，性能有很大的提升</p><p>另外Smart后期对当前这个图片做额外的修改，也可以用Smart将新增的图片直接添加进去，不会破坏原有的结构，所以通常来讲都用Smart，点击Slice切割，再点Apply，那么一张图片就切好了，跟预想的一样，空白的位置并没有切割出瓦片</p><p>Player文件夹里是分各个部分的，拿工具，头，手，身体，是按照它们的动画来进行分类的，这么做的目的是可以利用只简单切换手臂并保留身体和头发的动画就实现比如跑步，举着东西跑步两种动画的切换，另外，这样分割的好处就是如果以后修改这套素材，例如人物原始的图片资源素材，如果修改了服装，样式的话，你也可以将它导入这种序列帧的动画，然后实现换装的效果，所以将它都分开了</p><p>首先同样应用在Slice20这个Preset，点击Apply后再点Sprite Editor，我们所有人物的动画都是8帧的，所以切割的时候按照Grid By Cell Count来切，Column&amp;Row分别为8,1,锚点Pivot要选在Bottom,Method选为Smart点击Slice切割</p><p>选中一个图片后，锚点是在脚下，因为俯视角游戏，希望按照y轴来进行渲染，进行图层的排序，这样的话会有很明显的遮挡的效果</p><p>家具图片，在Sprite Editor里Type使用Automatic自动切割，Pivot锚点也是底部Bottom，然后选Smart，再点Slice切割，最后点Apply</p><figure class="highlight c#"><table><tr><td class="code"><pre><span class="line"><span class="comment">//未完待续</span></span><br></pre></td></tr></table></figure>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;h2 id=&quot;模拟经营项目&quot;&gt;&lt;a href=&quot;#模拟经营项目&quot; class=&quot;headerlink&quot; title=&quot;模拟经营项目&quot;&gt;&lt;/a&gt;模拟经营项目&lt;/h2&gt;&lt;h3 id=&quot;导入素材&quot;&gt;&lt;a href=&quot;#导入素材&quot; class=&quot;headerlink&quot; title=&quot;导</summary>
+      
+    
+    
+    
+    
+  </entry>
   
   <entry>
     <title>模拟经营项目的笔记0511</title>
