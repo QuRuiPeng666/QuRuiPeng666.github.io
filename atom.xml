@@ -6,7 +6,7 @@
   <link href="http://quruipeng666.github.io/atom.xml" rel="self"/>
   
   <link href="http://quruipeng666.github.io/"/>
-  <updated>2024-05-11T10:44:47.527Z</updated>
+  <updated>2024-05-11T12:44:30.548Z</updated>
   <id>http://quruipeng666.github.io/</id>
   
   <author>
@@ -15,6 +15,26 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>笔记0511-3</title>
+    <link href="http://quruipeng666.github.io/2024/05/11/%E7%AC%94%E8%AE%B00511-3/"/>
+    <id>http://quruipeng666.github.io/2024/05/11/%E7%AC%94%E8%AE%B00511-3/</id>
+    <published>2024-05-11T12:21:29.000Z</published>
+    <updated>2024-05-11T12:44:30.548Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="Player"><a href="#Player" class="headerlink" title="Player"></a>Player</h2><h3 id="创建Player"><a href="#创建Player" class="headerlink" title="创建Player"></a>创建Player</h3><p>创建Player空的父物体，设置Sorting Group，里边可以设置Sorting Layer为Instance（父及子物体看作是一个整体进行渲染），在Hierarchy中出现在下方的物体会遮盖上方物体，子物体从上往下排序：Shadow，Body，Hair，Arm</p><p>Sprite Renderer组件中的Sprite Sort Point图片渲染参考点，希望按照脚底的中心来进行排序，所以选Pivot</p><p>Sorting Layer设置对应的图层（Instance）和序，Order in Layer序号越大渲染表现越能遮盖</p><h3 id="俯视角需做小修改"><a href="#俯视角需做小修改" class="headerlink" title="俯视角需做小修改"></a>俯视角需做小修改</h3><p>随便拖个草丛进场景，在Player上下拖动并没有在上侧去到Player后方，按照Z轴方向渲染，数值越小离摄像机越近，反之越远，所以出现这种叠层关系</p><p>Editor–&gt;Project Settings–&gt;Graphics里的Transparency Sort Mode 改成Custom Axis，Y改1，Z改0</p><h3 id="锚点位置设置在底部中心"><a href="#锚点位置设置在底部中心" class="headerlink" title="锚点位置设置在底部中心"></a>锚点位置设置在底部中心</h3><p>是为了处理俯视角的物体遮罩关系</p><figure class="highlight c#"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line"><span class="comment">//未完待续</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;h2 id=&quot;Player&quot;&gt;&lt;a href=&quot;#Player&quot; class=&quot;headerlink&quot; title=&quot;Player&quot;&gt;&lt;/a&gt;Player&lt;/h2&gt;&lt;h3 id=&quot;创建Player&quot;&gt;&lt;a href=&quot;#创建Player&quot; class=&quot;headerlink&quot; </summary>
+      
+    
+    
+    
+    
+  </entry>
   
   <entry>
     <title>笔记0511-2</title>
