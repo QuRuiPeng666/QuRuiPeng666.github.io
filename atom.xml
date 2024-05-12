@@ -6,7 +6,7 @@
   <link href="http://quruipeng666.github.io/atom.xml" rel="self"/>
   
   <link href="http://quruipeng666.github.io/"/>
-  <updated>2024-05-11T12:44:30.548Z</updated>
+  <updated>2024-05-12T13:21:52.170Z</updated>
   <id>http://quruipeng666.github.io/</id>
   
   <author>
@@ -15,6 +15,26 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>笔记0512-1</title>
+    <link href="http://quruipeng666.github.io/2024/05/12/%E7%AC%94%E8%AE%B00512-1/"/>
+    <id>http://quruipeng666.github.io/2024/05/12/%E7%AC%94%E8%AE%B00512-1/</id>
+    <published>2024-05-12T13:03:46.000Z</published>
+    <updated>2024-05-12T13:21:52.170Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="实现Player基本移动"><a href="#实现Player基本移动" class="headerlink" title="实现Player基本移动"></a>实现Player基本移动</h2><h3 id="添加必要组件"><a href="#添加必要组件" class="headerlink" title="添加必要组件"></a>添加必要组件</h3><p>Box Collider 2D设置碰撞体，设置到脚下很小的一部分碰撞体</p><p>Rigidbody 2D中的Gravity Scale改为0</p><h3 id="添加代码"><a href="#添加代码" class="headerlink" title="添加代码"></a>添加代码</h3><p>创建Assets–&gt;Scripts–&gt;Player处的文件，添加Player脚本绑定到Player上</p><h3 id="主要代码"><a href="#主要代码" class="headerlink" title="主要代码"></a>主要代码</h3><p>思路：x，y轴的输入存到一个Vector2变量里，给到Rigidbody2D，需要float型的speed，x方向输入，y方向输入这些参数，以及一个Vector2作为移动输入变量</p><figure class="highlight c#"><table><tr><td class="code"><pre><span class="line"><span class="comment">//监测输入函数，在Update中要调用</span></span><br><span class="line"><span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">PlayerInput</span>()</span></span><br><span class="line">    &#123;</span><br><span class="line">        <span class="comment">//if(inputY == 0)，只能横向，竖向这样走（不允许斜着走）</span></span><br><span class="line">        inputX = Input.GetAxisRaw(<span class="string">&quot;Horizontal&quot;</span>);</span><br><span class="line">        <span class="comment">//if(inputX == 0)</span></span><br><span class="line">        inputY = Input.GetAxisRaw(<span class="string">&quot;Vertical&quot;</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">//都有输入，斜方向移动</span></span><br><span class="line">        <span class="keyword">if</span>(inputX != <span class="number">0</span> &amp;&amp; inputY != <span class="number">0</span>)</span><br><span class="line">        &#123;</span><br><span class="line">            inputX = inputX * <span class="number">0.6f</span>;</span><br><span class="line">            inputY = inputY * <span class="number">0.6f</span>;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="comment">//走路状态速度</span></span><br><span class="line">        <span class="keyword">if</span> (Input.GetKey(KeyCode.LeftShift))</span><br><span class="line">        &#123;</span><br><span class="line">            inputX = inputX * <span class="number">0.5f</span>;</span><br><span class="line">            inputY = inputY * <span class="number">0.5f</span>;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        movementInput = <span class="keyword">new</span> Vector2(inputX, inputY);</span><br><span class="line"></span><br><span class="line">        isMoving = movementInput != Vector2.zero;</span><br><span class="line">    &#125;</span><br><span class="line"><span class="comment">//移动函数，用到了刚体（物理），要在FixUpdate中调用</span></span><br><span class="line"><span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">Movement</span>()</span></span><br><span class="line">    &#123;</span><br><span class="line"><span class="comment">//2D横板通常用AddForce添加力，纵向的俯视角的用下边的MovePosition移动坐标的位置</span></span><br><span class="line"><span class="comment">//方法就是将它现有的坐标+movementInput这个方向性的坐标再乘速度就能实现俯视角移动</span></span><br><span class="line">        rb.MovePosition(rb.position + movementInput * speed * Time.deltaTime);</span><br><span class="line"><span class="comment">//乘Time.deltaTime为了修正在不同设备上的，不同帧数下的统一的运行</span></span><br><span class="line">    &#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;h2 id=&quot;实现Player基本移动&quot;&gt;&lt;a href=&quot;#实现Player基本移动&quot; class=&quot;headerlink&quot; title=&quot;实现Player基本移动&quot;&gt;&lt;/a&gt;实现Player基本移动&lt;/h2&gt;&lt;h3 id=&quot;添加必要组件&quot;&gt;&lt;a href=&quot;#添加必要组件&quot;</summary>
+      
+    
+    
+    
+    
+  </entry>
   
   <entry>
     <title>笔记0511-3</title>
