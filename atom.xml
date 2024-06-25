@@ -6,7 +6,7 @@
   <link href="http://quruipeng666.github.io/atom.xml" rel="self"/>
   
   <link href="http://quruipeng666.github.io/"/>
-  <updated>2024-06-25T13:56:53.390Z</updated>
+  <updated>2024-06-25T14:53:59.148Z</updated>
   <id>http://quruipeng666.github.io/</id>
   
   <author>
@@ -15,6 +15,26 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>6-25做题笔记2</title>
+    <link href="http://quruipeng666.github.io/2024/06/25/6-25%E5%81%9A%E9%A2%98%E7%AC%94%E8%AE%B02/"/>
+    <id>http://quruipeng666.github.io/2024/06/25/6-25%E5%81%9A%E9%A2%98%E7%AC%94%E8%AE%B02/</id>
+    <published>2024-06-25T14:29:15.000Z</published>
+    <updated>2024-06-25T14:53:59.148Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="这次的题目有些经典"><a href="#这次的题目有些经典" class="headerlink" title="这次的题目有些经典"></a>这次的题目有些经典</h2><h3 id="若数组S-1-n-作为两个栈S1和S2的存储空间，对任何一个栈，只有当-1-n-全满时才不能进行进栈操作。为这两个栈分配空间的最佳方案是（）"><a href="#若数组S-1-n-作为两个栈S1和S2的存储空间，对任何一个栈，只有当-1-n-全满时才不能进行进栈操作。为这两个栈分配空间的最佳方案是（）" class="headerlink" title="若数组S[1..n]作为两个栈S1和S2的存储空间，对任何一个栈，只有当[1..n]全满时才不能进行进栈操作。为这两个栈分配空间的最佳方案是（）"></a>若数组S[1..n]作为两个栈S1和S2的存储空间，对任何一个栈，只有当[1..n]全满时才不能进行进栈操作。为这两个栈分配空间的最佳方案是（）</h3><p>S1的栈底位置为1，S2的栈底位置为n</p><p>重点：注意数组下标从1开始，栈S1的栈底位置在1，随着元素入栈，朝数组索引增加方向增加。栈S2的栈底位置在n，随元素入栈，朝数组索引减少方向增加。按照这样的方案，只有当数组S全满时才不能进行进栈操作，此时两个栈的指针设想均在数组索引最中间位置。</p><h3 id="假设有60行70列的二维数组-a-1-…60-1…70-以列序为主序顺序存储，其基地址为10000，每个元素占2个存储单元，那么第32行第58列的元素-a-32-58-的存储地址为"><a href="#假设有60行70列的二维数组-a-1-…60-1…70-以列序为主序顺序存储，其基地址为10000，每个元素占2个存储单元，那么第32行第58列的元素-a-32-58-的存储地址为" class="headerlink" title="假设有60行70列的二维数组 a[1 …60, 1…70 ] 以列序为主序顺序存储，其基地址为10000，每个元素占2个存储单元，那么第32行第58列的元素 a[ 32,58 ] 的存储地址为"></a>假设有60行70列的二维数组 a[1 …60, 1…70 ] 以列序为主序顺序存储，其基地址为10000，每个元素占2个存储单元，那么第32行第58列的元素 a[ 32,58 ] 的存储地址为</h3><p>注意：题目是说按列存储，不是按行存储！！存储第32行第58列元素之前，一共存储的元素个数为：57<em>60+31&#x3D;3451，需要的存储单元数为3451</em>2&#x3D;6902，又因为基地址为10000，故存储完第31行第58列元素位置为16901，所以存储第32行第58列元素地址为16902（开始）。</p><figure class="highlight c#"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;h2 id=&quot;这次的题目有些经典&quot;&gt;&lt;a href=&quot;#这次的题目有些经典&quot; class=&quot;headerlink&quot; title=&quot;这次的题目有些经典&quot;&gt;&lt;/a&gt;这次的题目有些经典&lt;/h2&gt;&lt;h3 id=&quot;若数组S-1-n-作为两个栈S1和S2的存储空间，对任何一个栈，只有当-1</summary>
+      
+    
+    
+    
+    
+  </entry>
   
   <entry>
     <title>6.25做题笔记1</title>
