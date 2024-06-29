@@ -6,7 +6,7 @@
   <link href="http://quruipeng666.github.io/atom.xml" rel="self"/>
   
   <link href="http://quruipeng666.github.io/"/>
-  <updated>2024-06-27T09:12:15.650Z</updated>
+  <updated>2024-06-29T14:30:54.544Z</updated>
   <id>http://quruipeng666.github.io/</id>
   
   <author>
@@ -15,6 +15,27 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>第三章-线性表——《大话数据结构》</title>
+    <link href="http://quruipeng666.github.io/2024/06/28/%E7%AC%AC%E4%B8%89%E7%AB%A0-%E7%BA%BF%E6%80%A7%E8%A1%A8%E2%80%94%E2%80%94%E3%80%8A%E5%A4%A7%E8%AF%9D%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E3%80%8B/"/>
+    <id>http://quruipeng666.github.io/2024/06/28/%E7%AC%AC%E4%B8%89%E7%AB%A0-%E7%BA%BF%E6%80%A7%E8%A1%A8%E2%80%94%E2%80%94%E3%80%8A%E5%A4%A7%E8%AF%9D%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E3%80%8B/</id>
+    <published>2024-06-28T07:10:50.000Z</published>
+    <updated>2024-06-29T14:30:54.544Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="线性表"><a href="#线性表" class="headerlink" title="线性表"></a>线性表</h2><p>为《大话数据结构》书的第三章，线性表。线性表：零个或多个数据元素的有限序列。</p><h3 id="定义"><a href="#定义" class="headerlink" title="定义"></a>定义</h3><p>若将线性表记为（a1，…，ai-1，ai，ai+1，…，an），则表中ai-1是ai的直接前驱元素，ai+1是ai的直接后继元素。当i&#x3D;1，2，…，n-1时，ai有且仅有一个直接后继，当i&#x3D;2，3，…，n时，ai有且仅有一个直接前驱。</p><p>a1——a2——…——ai-1——ai——ai+1——…——an</p><p>线性表元素个数n可以为0，称为空表。</p><h3 id="线性表的抽象数据类型定义"><a href="#线性表的抽象数据类型定义" class="headerlink" title="线性表的抽象数据类型定义"></a>线性表的抽象数据类型定义</h3><figure class="highlight c#"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line">ADT 线性表（List）</span><br><span class="line"></span><br><span class="line">Data</span><br><span class="line">线性表的数据对象集合为&#123;a1，a2，...，an&#125;，每个元素的类型均为DataType。其中，除第一个元素a1外，每一个元素有且只有一个直接前驱元素，除了最后一个元素an外，每一个元素有且只有一个直接后继元素。数据元素之间的关系是一对一的关系。</span><br><span class="line">Operation</span><br><span class="line">InitList（*L）：初始化操作，建立一个空的线性表L。</span><br><span class="line">ListEmpty（L）：若线性表为空，返回<span class="literal">true</span>，否则返回<span class="literal">false</span>。</span><br><span class="line">ClearList（*L）：将线性表清空。</span><br><span class="line">GetElem（L，i，*e）：将线性表L中的第i个位置元素值返回给e。</span><br><span class="line">LocateElem（L，e）：在线性表L中查找与给定值e相等的元素，如果查找成功，返回该元素在表中序号表示成功；否则，返回<span class="number">0</span>表示失败。</span><br><span class="line">ListInsert（*L，i，e）：在线性表L中的第i个位置插入新元素e。</span><br><span class="line">ListDelete（*L，i，*e）：删除线性表L中第i个位置元素，并用e返回其值。</span><br><span class="line">ListLength（L）：返回线性表L的元素个数。</span><br><span class="line">endADT</span><br><span class="line"></span><br></pre></td></tr></table></figure><h3 id="线性表的顺序存储结构"><a href="#线性表的顺序存储结构" class="headerlink" title="线性表的顺序存储结构"></a>线性表的顺序存储结构</h3><p>线性表的顺序存储结构，指的是用一段地址连续的存储单元依次存储线性表的数据元素。</p><p>顺序存储结构需要三个属性：1.存储空间的起始位置：数组data，它的存储位置就是存储空间的存储位置。2.线性表的最大存储容量：数组长度MaxSize。3.线性表的当前长度：length。</p><h3 id="数组长度与线性表长度区别"><a href="#数组长度与线性表长度区别" class="headerlink" title="数组长度与线性表长度区别"></a>数组长度与线性表长度区别</h3><p>在任意时刻，线性表的长度Length应该小于等于数组的长度MaxSize。</p><h3 id="地址计算方法"><a href="#地址计算方法" class="headerlink" title="地址计算方法"></a>地址计算方法</h3><p>存储器中的每个存储单元都有自己的编号，这个编号称为地址。</p><p>假设每个数据元素占用c个存储单元空间，那么线性表中的第i+1个数据元素的存储位置和第i个数据元素的存储位置满足下列关系（LOC表示获得存储位置的函数）。</p><p>LOC（ai+1）&#x3D;LOC（ai）+c</p><p>LOC（ai）&#x3D;LOC（a1）+（i-1）乘c</p><p>通过这个公式，可以随时算出线性表中任意位置的地址，不管是第一个还是最后一个，都是相同时间。那么对每个线性表位置的存取数据，对于计算机来说都是相等时间，也就是一个常数，存取时间性能为O（1）。通常把具有这一特点的存储结构称为随机存取结构。</p><h3 id="线性表链式存储结构"><a href="#线性表链式存储结构" class="headerlink" title="线性表链式存储结构"></a>线性表链式存储结构</h3><p>头结点的数据域一般存储链表的长度，头结点的指针域存储指向第一个结点的指针，最后一个结点的指针指向空。</p><p>头指针就是链表指向第一个结点的指针，具有标识作用，常用它冠以链表的名字。</p><p>无论链表是否为空，头指针均不为空（空链表时，头指针指向一个双域全空的结点）。头指针是链表的必要元素。头结点不一定是链表必须要素。</p><p>若线性表为空表，则头结点的指针域为空，表示空链表。</p><h3 id="单链表的插入"><a href="#单链表的插入" class="headerlink" title="单链表的插入"></a>单链表的插入</h3><p>在p与p—&gt;next之间插入s：s—&gt;next &#x3D; p—&gt;next；p—&gt;next &#x3D; s；</p><h3 id="单链表的删除"><a href="#单链表的删除" class="headerlink" title="单链表的删除"></a>单链表的删除</h3><p>在p后删除q：q &#x3D; p—&gt;next；p—&gt;next &#x3D; q—&gt;next；</p><p>对于插入或删除数据越频繁的操作，单链表的效率优势就越是明显。如希望从第i个位置，插入10个元素。</p><h3 id="单链表结构与顺序存储结构优缺点"><a href="#单链表结构与顺序存储结构优缺点" class="headerlink" title="单链表结构与顺序存储结构优缺点"></a>单链表结构与顺序存储结构优缺点</h3><p>存储分配方式上，顺序存储结构用一段连续的存储单元依次存储线性表的数据元素。单链表采用链式存储结构，用一组任意的存储单元存放线性表的元素。</p><p>时间性能上，查找：顺序存储结构O（1）。单链表O（n）。插入和删除：顺序存储结构需要平均移动表长一半的元素，时间为O（n）。单链表在找出某位置的指针后，插入和删除时间仅为O（1）。</p><p>空间性能上，顺序存储结构需要预分配存储空间，分大了浪费，分小了易发生上溢。单链表不需要分配存储空间，只要有就可以分配，元素个数也不受限制。</p><h3 id="静态链表优缺点"><a href="#静态链表优缺点" class="headerlink" title="静态链表优缺点"></a>静态链表优缺点</h3><p>优点：在插入和删除操作时，只需要修改游标，不需要移动元素，从而改进了在顺序存储结构中的插入和删除操作需要移动大量元素的缺点。</p><p>缺点：没有解决连续存储分配带来的表长难以确定的问题。失去了顺序存储结构随机存取的特性。</p><h3 id="循环链表"><a href="#循环链表" class="headerlink" title="循环链表"></a>循环链表</h3><p>将单链表中终端结点的指针端由空指针改为指向头结点，就使整个单链表形成一个环，这种头尾相接的单链表称为单循环链表，简称循环链表。</p><h3 id="双向链表"><a href="#双向链表" class="headerlink" title="双向链表"></a>双向链表</h3><p>双向链表是在单链表的每个结点中，再设置一个指向其前驱结点的指针域。所以双向链表中的结点都有两个指针域，一个指向直接后继，另一个指向直接前驱。</p><h3 id="双向链表的插入"><a href="#双向链表的插入" class="headerlink" title="双向链表的插入"></a>双向链表的插入</h3><p>在p与p—&gt;next之间插入s：s—&gt;prior &#x3D; p; s—&gt;next &#x3D; p—&gt;next; p—&gt;next—&gt;prior &#x3D; s; p—&gt;next &#x3D; s;</p><p>删除p结点：p—&gt;prior—&gt;next &#x3D; p—&gt;next;  p—&gt;next—&gt;prior &#x3D; p—&gt;prior;</p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;h2 id=&quot;线性表&quot;&gt;&lt;a href=&quot;#线性表&quot; class=&quot;headerlink&quot; title=&quot;线性表&quot;&gt;&lt;/a&gt;线性表&lt;/h2&gt;&lt;p&gt;为《大话数据结构》书的第三章，线性表。线性表：零个或多个数据元素的有限序列。&lt;/p&gt;
+&lt;h3 id=&quot;定义&quot;&gt;&lt;a href=&quot;#定</summary>
+      
+    
+    
+    
+    
+  </entry>
   
   <entry>
     <title>第二章-算法一一《大话数据结构》</title>
@@ -396,27 +417,6 @@
       
       
     <summary type="html">&lt;h2 id=&quot;Hashtable&quot;&gt;&lt;a href=&quot;#Hashtable&quot; class=&quot;headerlink&quot; title=&quot;Hashtable&quot;&gt;&lt;/a&gt;Hashtable&lt;/h2&gt;&lt;p&gt;中文全称叫 哈希表。它是一个集合容器。Hashtable类代表了基于键的哈希代码组织</summary>
-      
-    
-    
-    
-    
-  </entry>
-  
-  <entry>
-    <title>泛型类集合一一List</title>
-    <link href="http://quruipeng666.github.io/2024/03/17/%E6%B3%9B%E5%9E%8B%E7%B1%BB%E9%9B%86%E5%90%88%E4%B8%80%E4%B8%80List/"/>
-    <id>http://quruipeng666.github.io/2024/03/17/%E6%B3%9B%E5%9E%8B%E7%B1%BB%E9%9B%86%E5%90%88%E4%B8%80%E4%B8%80List/</id>
-    <published>2024-03-17T06:49:06.000Z</published>
-    <updated>2024-03-17T07:05:14.000Z</updated>
-    
-    <content type="html"><![CDATA[<h2 id="List"><a href="#List" class="headerlink" title="List"></a>List</h2><p>也是一种容器，泛型类集合。对于List来说，往往会和泛型配合使用，List&lt;&gt;。</p><p>功能和作用类似于 ArrayList。List比ArrayList出现得晚一些，是具有更好的功能。</p><p>ArrayList不是指定固定类型的，实际上它的参数是Object类型，也就是说不管我们使用的是int，string还是我们定义的一个类，拿它作为ArrayList的参数的时候，都必须要通过一个装箱和拆箱的操作，同时还要再完成类型转换。</p><p>装箱，拆箱，类型转换是有一定的性能消耗，如果我们使用List，由于它是一个泛型，用的时候必须要指定某一种具体类型，那么它就无需装箱，拆箱，类型转换。</p><p>由此它类型安全，不会出现不同类型之间所产生的一些异常的问题。</p><h3 id="声明List"><a href="#声明List" class="headerlink" title="声明List"></a>声明List</h3><figure class="highlight c#"><table><tr><td class="code"><pre><span class="line"><span class="comment">//初始化</span></span><br><span class="line">List&lt;<span class="built_in">int</span>&gt; list1 = <span class="keyword">new</span> List&lt;<span class="built_in">int</span>&gt;();</span><br><span class="line"></span><br><span class="line"><span class="comment">//List定义的&lt;int&gt;，只能添加int型元素，类型安全。ArrayList类型不安全。</span></span><br><span class="line">list1.Add(<span class="number">1</span>);</span><br><span class="line">list1.Add(<span class="number">2</span>);</span><br><span class="line">list1.Add(<span class="number">3</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">//list1.Count长度为3</span></span><br><span class="line"><span class="comment">//list1.Clear();  list1.Contains();  list1.Insert();  list1.InsertRange();  list1.Remove();</span></span><br><span class="line"><span class="comment">//通过for循环，foreach也能进行遍历</span></span><br><span class="line"><span class="comment">//list1.Sort();  list1.Reverse();  list1.IndexOf();</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>]]></content>
-    
-    
-      
-      
-    <summary type="html">&lt;h2 id=&quot;List&quot;&gt;&lt;a href=&quot;#List&quot; class=&quot;headerlink&quot; title=&quot;List&quot;&gt;&lt;/a&gt;List&lt;/h2&gt;&lt;p&gt;也是一种容器，泛型类集合。对于List来说，往往会和泛型配合使用，List&amp;lt;&amp;gt;。&lt;/p&gt;
-&lt;p&gt;功能和作用类似于</summary>
       
     
     
