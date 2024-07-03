@@ -6,7 +6,7 @@
   <link href="http://quruipeng666.github.io/atom.xml" rel="self"/>
   
   <link href="http://quruipeng666.github.io/"/>
-  <updated>2024-06-29T14:30:54.544Z</updated>
+  <updated>2024-07-03T05:08:20.103Z</updated>
   <id>http://quruipeng666.github.io/</id>
   
   <author>
@@ -15,6 +15,27 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>第四章-栈与队列一一《大话数据结构》</title>
+    <link href="http://quruipeng666.github.io/2024/06/30/%E7%AC%AC%E5%9B%9B%E7%AB%A0-%E6%A0%88%E4%B8%8E%E9%98%9F%E5%88%97%E4%B8%80%E4%B8%80%E3%80%8A%E5%A4%A7%E8%AF%9D%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E3%80%8B/"/>
+    <id>http://quruipeng666.github.io/2024/06/30/%E7%AC%AC%E5%9B%9B%E7%AB%A0-%E6%A0%88%E4%B8%8E%E9%98%9F%E5%88%97%E4%B8%80%E4%B8%80%E3%80%8A%E5%A4%A7%E8%AF%9D%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E3%80%8B/</id>
+    <published>2024-06-30T07:03:48.000Z</published>
+    <updated>2024-07-03T05:08:20.103Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="栈与队列"><a href="#栈与队列" class="headerlink" title="栈与队列"></a>栈与队列</h2><p>此为《大话数据结构》书的第四章，栈与队列。</p><p>栈与队列：栈是限定仅在表尾进行插入和删除操作的线性表。队列是只允许在一端进行插入操作，而在另一端进行删除操作的线性表。</p><h3 id="栈的顺序存储结构"><a href="#栈的顺序存储结构" class="headerlink" title="栈的顺序存储结构"></a>栈的顺序存储结构</h3><p>存储栈的长度为StackSize，则栈顶位置top必须小于StackSize。当栈存在一个元素时，top&#x3D;0，因此通常把空栈的判定条件定为top&#x3D;-1。</p><h3 id="栈的链式存储结构"><a href="#栈的链式存储结构" class="headerlink" title="栈的链式存储结构"></a>栈的链式存储结构</h3><p>通常对于链栈来说，是不需要头结点的。基本不存在栈满的情况，除非内存已经没有可以使用的空间，如果真的发生，那此时的计算机操作系统已经面临死机崩溃的情况，而不是这个链栈是否溢出的问题。</p><p>对于空栈来说，链表原定义是头指针指向空，那么链栈的空其实就是top&#x3D;NULL的时候。</p><p>对比一下顺序栈和链栈，时间复杂度是一样的，均为O（1）。对于空间性能，顺序栈需要事先确定一个固定的长度，可能会存在内存空间浪费的问题，但它的优势是存取时定位很方便，而链栈则要求每个元素都有指针域，这同时增加了一些内存开销，但对于栈的长度无限制。</p><p>所以它们的区别和线性表中讨论的一样，如果栈的使用过程中元素变化不可预料，有时很小，有时非常大，那么最好用链栈，反之，如果它的变化在可控范围内，建议使用顺序栈会更好一些。</p><h3 id="递归"><a href="#递归" class="headerlink" title="递归"></a>递归</h3><p>我们把一个直接调用自己或通过一系列的调用语句间接地调用自己的函数，称作递归函数。</p><p>每个递归定义必须至少有一个条件，满足时递归不再进行，即不再引用自身而是返回值退出。</p><h3 id="队列"><a href="#队列" class="headerlink" title="队列"></a>队列</h3><p>队列是只允许在一端进行插入操作，而在另一端进行删除操作的线性表。队列是一种先进先出的线性表，FIFO。允许插入的一端称为队尾，允许删除的一端称为队头。</p><p>在可以确定队列长度最大值的情况下，建议用循环队列，如果你无法预估队列的长度时，则用链队列。</p><figure class="highlight c#"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;h2 id=&quot;栈与队列&quot;&gt;&lt;a href=&quot;#栈与队列&quot; class=&quot;headerlink&quot; title=&quot;栈与队列&quot;&gt;&lt;/a&gt;栈与队列&lt;/h2&gt;&lt;p&gt;此为《大话数据结构》书的第四章，栈与队列。&lt;/p&gt;
+&lt;p&gt;栈与队列：栈是限定仅在表尾进行插入和删除操作的线性表。队列是只允许</summary>
+      
+    
+    
+    
+    
+  </entry>
   
   <entry>
     <title>第三章-线性表——《大话数据结构》</title>
@@ -397,26 +418,6 @@
       
     <summary type="html">&lt;h2 id=&quot;字典&quot;&gt;&lt;a href=&quot;#字典&quot; class=&quot;headerlink&quot; title=&quot;字典&quot;&gt;&lt;/a&gt;字典&lt;/h2&gt;&lt;p&gt;泛型容器，存储键&amp;#x2F;值对的数据的集合。键&amp;#x2F;值对的类型必须是预先定义好的，类型安全。&lt;/p&gt;
 &lt;h3 id=&quot;字典的定义&quot;&gt;</summary>
-      
-    
-    
-    
-    
-  </entry>
-  
-  <entry>
-    <title>哈希table一一Hashtable</title>
-    <link href="http://quruipeng666.github.io/2024/03/17/%E5%93%88%E5%B8%8Ctable%E4%B8%80%E4%B8%80Hashtable/"/>
-    <id>http://quruipeng666.github.io/2024/03/17/%E5%93%88%E5%B8%8Ctable%E4%B8%80%E4%B8%80Hashtable/</id>
-    <published>2024-03-17T08:02:36.000Z</published>
-    <updated>2024-03-17T08:20:42.000Z</updated>
-    
-    <content type="html"><![CDATA[<h2 id="Hashtable"><a href="#Hashtable" class="headerlink" title="Hashtable"></a>Hashtable</h2><p>中文全称叫 哈希表。它是一个集合容器。Hashtable类代表了基于键的哈希代码组织起来的 键&#x2F;值 对 的集合。</p><p>每存储一个元素，都有一个键以及这个键所对应的一个值，也叫键&#x2F;值对，它使用键来访问集合中的元素。</p><h3 id="定义"><a href="#定义" class="headerlink" title="定义"></a>定义</h3><figure class="highlight c#"><table><tr><td class="code"><pre><span class="line"><span class="comment">//初始化定义</span></span><br><span class="line">Hashtable ht1 = <span class="keyword">new</span> Hashtable();</span><br><span class="line"></span><br><span class="line"><span class="comment">//类型不安全，key(键)，value(值)都是Object类型。</span></span><br><span class="line">ht1.Add(<span class="string">&quot;1&quot;</span>,<span class="number">100</span>);</span><br><span class="line">ht1.Add(<span class="number">1</span>,<span class="number">99</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">//清空操作，ht1.Clear();</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//ht1.ContainsKey(&quot;1&quot;);判断有没有&quot;1&quot;这个键，如果有返回true，反之false。</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//ht1.Count有几对键值对，这里是2</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//移除操作，ht1.Remove(&quot;1&quot;);参数是key(键)</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//比如我们想取出字符串&quot;1&quot;键的值，就写ht1[&quot;1&quot;]</span></span><br><span class="line"><span class="comment">//比如我们想取出int型1键的值，就写ht1[1]</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//比如我们想修改int型1键的值为999，就写ht1[1]=999;如果有int型1键的话才能改，否则会出现异常。</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//遍历</span></span><br><span class="line">ICollection key=ht1.Keys;<span class="comment">//所有键</span></span><br><span class="line"><span class="keyword">foreach</span>(<span class="keyword">var</span> k <span class="keyword">in</span> key)</span><br><span class="line">&#123;</span><br><span class="line"><span class="comment">//打印ht1[k]，每一个值</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>]]></content>
-    
-    
-      
-      
-    <summary type="html">&lt;h2 id=&quot;Hashtable&quot;&gt;&lt;a href=&quot;#Hashtable&quot; class=&quot;headerlink&quot; title=&quot;Hashtable&quot;&gt;&lt;/a&gt;Hashtable&lt;/h2&gt;&lt;p&gt;中文全称叫 哈希表。它是一个集合容器。Hashtable类代表了基于键的哈希代码组织</summary>
       
     
     
