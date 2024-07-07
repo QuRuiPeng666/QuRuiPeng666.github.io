@@ -6,7 +6,7 @@
   <link href="http://quruipeng666.github.io/atom.xml" rel="self"/>
   
   <link href="http://quruipeng666.github.io/"/>
-  <updated>2024-07-03T05:08:20.103Z</updated>
+  <updated>2024-07-07T05:28:56.488Z</updated>
   <id>http://quruipeng666.github.io/</id>
   
   <author>
@@ -15,6 +15,27 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>第五章-串一一《大话数据结构》</title>
+    <link href="http://quruipeng666.github.io/2024/07/07/%E7%AC%AC%E4%BA%94%E7%AB%A0-%E4%B8%B2%E4%B8%80%E4%B8%80%E3%80%8A%E5%A4%A7%E8%AF%9D%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E3%80%8B/"/>
+    <id>http://quruipeng666.github.io/2024/07/07/%E7%AC%AC%E4%BA%94%E7%AB%A0-%E4%B8%B2%E4%B8%80%E4%B8%80%E3%80%8A%E5%A4%A7%E8%AF%9D%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E3%80%8B/</id>
+    <published>2024-07-07T00:46:11.000Z</published>
+    <updated>2024-07-07T05:28:56.488Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="串"><a href="#串" class="headerlink" title="串"></a>串</h2><p>串是由零个或多个字符组成的有限序列，又名叫字符串。零个字符的串称为空串。</p><p>空格串，是只包含空格的串。空格串是有内容有长度的，而且可以不止一个空格。</p><p>子串与主串，串中任意个数的连续字符组成的子序列称为该串的子串，包含子串的串称为主串。</p><p>子串在主串中的位置就是子串的第一个字符在主串中的序号。</p><h3 id="串的比较"><a href="#串的比较" class="headerlink" title="串的比较"></a>串的比较</h3><p>串的比较是通过组成串的字符之间的编码来进行的，而字符的编码指的是字符在对应字符集中的序号。</p><h3 id="KMP改进算法：next数组与nextval数组值推导"><a href="#KMP改进算法：next数组与nextval数组值推导" class="headerlink" title="KMP改进算法：next数组与nextval数组值推导"></a>KMP改进算法：next数组与nextval数组值推导</h3><p>j：123456789</p><p>模式串T：ababaaaba</p><p>next[i]：011234223</p><p>nextval[i]：010104210</p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;h2 id=&quot;串&quot;&gt;&lt;a href=&quot;#串&quot; class=&quot;headerlink&quot; title=&quot;串&quot;&gt;&lt;/a&gt;串&lt;/h2&gt;&lt;p&gt;串是由零个或多个字符组成的有限序列，又名叫字符串。零个字符的串称为空串。&lt;/p&gt;
+&lt;p&gt;空格串，是只包含空格的串。空格串是有内容有长度的，而且可以不</summary>
+      
+    
+    
+    
+    
+  </entry>
   
   <entry>
     <title>第四章-栈与队列一一《大话数据结构》</title>
@@ -397,27 +418,6 @@
       
       
     <summary type="html">&lt;h2 id=&quot;Unity面试题基础&quot;&gt;&lt;a href=&quot;#Unity面试题基础&quot; class=&quot;headerlink&quot; title=&quot;Unity面试题基础&quot;&gt;&lt;/a&gt;Unity面试题基础&lt;/h2&gt;&lt;h3 id=&quot;四元数的作⽤&quot;&gt;&lt;a href=&quot;#四元数的作⽤&quot; class=&quot;</summary>
-      
-    
-    
-    
-    
-  </entry>
-  
-  <entry>
-    <title>泛型容器一一字典</title>
-    <link href="http://quruipeng666.github.io/2024/03/17/%E6%B3%9B%E5%9E%8B%E5%AE%B9%E5%99%A8%E4%B8%80%E4%B8%80%E5%AD%97%E5%85%B8/"/>
-    <id>http://quruipeng666.github.io/2024/03/17/%E6%B3%9B%E5%9E%8B%E5%AE%B9%E5%99%A8%E4%B8%80%E4%B8%80%E5%AD%97%E5%85%B8/</id>
-    <published>2024-03-17T08:22:09.000Z</published>
-    <updated>2024-03-17T08:43:32.000Z</updated>
-    
-    <content type="html"><![CDATA[<h2 id="字典"><a href="#字典" class="headerlink" title="字典"></a>字典</h2><p>泛型容器，存储键&#x2F;值对的数据的集合。键&#x2F;值对的类型必须是预先定义好的，类型安全。</p><h3 id="字典的定义"><a href="#字典的定义" class="headerlink" title="字典的定义"></a>字典的定义</h3><p>使用字典需要引用using System.Collections.Generic;</p><figure class="highlight c#"><table><tr><td class="code"><pre><span class="line"><span class="comment">//初始化一个key是string类型，value也是string型的字典</span></span><br><span class="line">Dictionary&lt;<span class="built_in">string</span>,<span class="built_in">string</span>&gt; dic1 = <span class="keyword">new</span> Dictionary&lt;<span class="built_in">string</span>,<span class="built_in">string</span>&gt;();</span><br><span class="line"></span><br><span class="line"><span class="comment">//添加</span></span><br><span class="line">dic1.Add(<span class="string">&quot;1&quot;</span>,<span class="string">&quot;100&quot;</span>);</span><br><span class="line">dic1.Add(<span class="string">&quot;2&quot;</span>,<span class="string">&quot;200&quot;</span>);</span><br><span class="line">dic1.Add(<span class="string">&quot;3&quot;</span>,<span class="string">&quot;300&quot;</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">//判断是否存在键</span></span><br><span class="line"><span class="keyword">if</span>(dic1.ContainsKey(<span class="string">&quot;1&quot;</span>))</span><br><span class="line">&#123;</span><br><span class="line"><span class="comment">//打印（存在&quot;1&quot;键）</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//修改</span></span><br><span class="line">dic1[<span class="string">&quot;1&quot;</span>] = <span class="string">&quot;1000&quot;</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">//遍历，另一种取出所有键方式也行</span></span><br><span class="line"><span class="keyword">foreach</span>(KeyValuePair&lt;<span class="built_in">string</span>,<span class="built_in">string</span>&gt; kvp <span class="keyword">in</span> dic1)</span><br><span class="line">&#123;</span><br><span class="line"><span class="comment">//打印每一对 键/值对 的 kvp.Key 和 kvp.Value</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//移除</span></span><br><span class="line">dic1.Remove(<span class="string">&quot;2&quot;</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">//清空</span></span><br><span class="line">dic1.Clear();</span><br></pre></td></tr></table></figure><p>字典跟哈希表的使用方式非常像</p><h3 id="区别"><a href="#区别" class="headerlink" title="区别"></a>区别</h3><p>字典定义时需要是泛型，需要指定好类型，这样的话在使用的时候就没有装箱拆箱类型转换那一步，执行效率非常高。<br>哈希表在Add（key，value）时都是object类型的，必须会多了装箱拆箱类型转换这个操作，执行效率会低一些。</p><h3 id="了解概念"><a href="#了解概念" class="headerlink" title="了解概念"></a>了解概念</h3><p>线程安全，线程不安全。</p>]]></content>
-    
-    
-      
-      
-    <summary type="html">&lt;h2 id=&quot;字典&quot;&gt;&lt;a href=&quot;#字典&quot; class=&quot;headerlink&quot; title=&quot;字典&quot;&gt;&lt;/a&gt;字典&lt;/h2&gt;&lt;p&gt;泛型容器，存储键&amp;#x2F;值对的数据的集合。键&amp;#x2F;值对的类型必须是预先定义好的，类型安全。&lt;/p&gt;
-&lt;h3 id=&quot;字典的定义&quot;&gt;</summary>
       
     
     
