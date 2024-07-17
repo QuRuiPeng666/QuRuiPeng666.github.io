@@ -6,7 +6,7 @@
   <link href="http://quruipeng666.github.io/atom.xml" rel="self"/>
   
   <link href="http://quruipeng666.github.io/"/>
-  <updated>2024-07-16T06:45:45.294Z</updated>
+  <updated>2024-07-17T03:08:25.433Z</updated>
   <id>http://quruipeng666.github.io/</id>
   
   <author>
@@ -15,6 +15,26 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>第九章-排序一一《大话数据结构》</title>
+    <link href="http://quruipeng666.github.io/2024/07/16/%E7%AC%AC%E4%B9%9D%E7%AB%A0-%E6%8E%92%E5%BA%8F%E4%B8%80%E4%B8%80%E3%80%8A%E5%A4%A7%E8%AF%9D%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E3%80%8B/"/>
+    <id>http://quruipeng666.github.io/2024/07/16/%E7%AC%AC%E4%B9%9D%E7%AB%A0-%E6%8E%92%E5%BA%8F%E4%B8%80%E4%B8%80%E3%80%8A%E5%A4%A7%E8%AF%9D%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E3%80%8B/</id>
+    <published>2024-07-16T06:47:23.000Z</published>
+    <updated>2024-07-17T03:08:25.433Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="排序"><a href="#排序" class="headerlink" title="排序"></a>排序</h2><p>假设含有n个记录的序列为{r1，r2，…，rn}，其相应的关键字分别为{k1，k2，…，kn}，需确定1，2，…，n的一种排列p1，p2，…，pn，使其相应的关键字满足kp1小于等于kp2小于等于…小于等于kpm（非递减或非递增）关系，即使得序列成为一个按关键字有序的序列{rp1，rp2，…，rpn}，这样的操作就称为排序。</p><p>多个关键字的排序最终都可以转化为单个关键字的排序。</p><h3 id="排序的稳定性"><a href="#排序的稳定性" class="headerlink" title="排序的稳定性"></a>排序的稳定性</h3><p>假设ki&#x3D;kj（1小于等于i小于等于n，1小于等于j小于等于n，i不等于j），且在排序前的序列中ri领先于rj（即i＜j）。如果排序后ri仍领先于rj，则称所用的排序方法是稳定的，反之，若可能使得排序后的序列中rj领先ri，则称所用的排序方法是不稳定的。</p><h3 id="内排序和外排序"><a href="#内排序和外排序" class="headerlink" title="内排序和外排序"></a>内排序和外排序</h3><p>内排序是在排序整个过程中，待排序的所有记录全部被放置在内存中。外排序是由于排序的记录个数太多，不能同时放置在内存，整个排序过程需要在内外存之间多次交换数据才能进行。</p><p>对于内排序来说，排序算法的性能主要是受3个方面影响：1.时间性能：尽可能少的关键字比较次数和记录移动次数。2.辅助空间：辅助存储空间是除了存放待排序所占用的存储空间之外，执行算法所需要的其他存储空间。3.算法的复杂性：这里指算法本身的复杂度。</p><p>根据排序过程中借助的主要操作，把内排序分为：插入排序，交换排序，选择排序，归并排序。</p><p>按照算法的复杂度分为两大类，冒泡排序，简单选择排序和直接插入排序属于简单算法，而希尔排序，堆排序，归并排序，快速排序属于改进算法。</p><h3 id="冒泡排序"><a href="#冒泡排序" class="headerlink" title="冒泡排序"></a>冒泡排序</h3><p>冒泡排序是一种交换排序，两两比较相邻记录的关键字，如果反序则交换，直到没有反序的记录为止。</p><p>冒泡排序优化，增加标记变量flag，初始false，若有数据交换flag更改为true，大循环退出。</p><p>总时间复杂度O（n的平方）。最优情况排序优化后时间复杂度O（n）。</p><h3 id="简单选择排序"><a href="#简单选择排序" class="headerlink" title="简单选择排序"></a>简单选择排序</h3><p>简单选择排序法通过n-i次关键字间的比较，从n-i+1个记录中选出关键字最小的记录，并和第i（1小于等于i小于等于n）个记录交换之。</p><p>交换移动数据次数相当少，第i趟排序需要进行n-i次关键字的比较，此时需要比较n乘（n-1）&#x2F;2次。比较次数都是一样的多。时间复杂度O（n的平方）。但性能上还略优于冒泡排序。</p><h3 id="直接插入排序"><a href="#直接插入排序" class="headerlink" title="直接插入排序"></a>直接插入排序</h3><p>直接插入排序是将一个记录插入到已经排好序的有序表中，从而得到一个新的，记录数增1的有序表。</p><p>使用“哨兵”。查找插入位置时顺序查找，比哨兵大的往后移，遇到比哨兵小的就插入其后。</p><p>依次将每个元素插入到前面有序的部分。是稳定排序。</p><p>最坏复杂度O（n的平方）。最好情况下时间复杂度O（n）。直接插入排序比冒泡和简单选择排序的性能要好一些。</p><p>折半插入排序：查找插入位置时采用折半查找法。在已经有序区中使用，mid&#x3D;（low+high）&#x2F;2。</p><p>折半查找比顺序查找快，所以折半插入排序就平均性能来说比直接插入排序要快。减少了比较次数，但没有减少移动次数。时间复杂度O（n的平方）。稳定。空间复杂度O（1）。</p><h3 id="希尔排序"><a href="#希尔排序" class="headerlink" title="希尔排序"></a>希尔排序</h3><p>先将整个待排记录序列分割成若干子序列，分别进行直接插入排序，待整个序列中的记录“基本有序”时，再对全体记录进行一次直接插入排序。</p><p>希尔排序：1.定义增量序列Dk：DM&gt;DM-1&gt;…&gt;D1&#x3D;1。2.对每个Dk进行“Dk-间隔”插入排序（K&#x3D;M，M-1，…，1）</p><p>特点：1.一次移动，移动位置较大，跳跃式接近排序后最终位置。2.最后一次只需少量移动。3.增量序列必须是递减的，最后一个必须是1。4.增量序列必须是互质的。</p><p>将相距某个“增量”的记录组成一个子序列，这样才能保证在子序列中分别进行直接插入排序后得到的结果是基本有序而不是局部有序。</p><p>希尔排序算法效率与增量序列的取值有关。不稳定。</p><p>时间复杂度O（n的1.3次方）。好于n的平方。</p><h3 id="堆排序"><a href="#堆排序" class="headerlink" title="堆排序"></a>堆排序</h3><p>堆的定义：若n个元素的序列{a1，a2，…，an}满足ai小于等于a2i且ai小于等于a2i+1，或ai大于等于a2i且ai大于等于a2i+1，则分别称该序列为小根堆和大根堆。</p><p>从堆定义能看出，堆实质是满足如下性质的完全二叉树：二叉树任一非叶子节点均小于（大于）它的孩子节点。</p><p>堆排序：若在输出堆顶的最小值（最大值）后，使得剩余n-1个元素的序列重又建成一个堆，则得到n个元素的次小值（次大值）…如此反复，便能得到一个有序序列，这个过程称为堆排序。</p><p>小根堆：1.输出堆顶元素后，以堆中最后一个元素替代之。2.然后将根节点值与左，右子树的根节点值进行比较，并与其中小者交换。3.重复上述操作，直至叶子节点，将得到新的堆，称这个从堆顶至叶子的调整过程为筛选。</p><h3 id="归并排序"><a href="#归并排序" class="headerlink" title="归并排序"></a>归并排序</h3><p>将两个或两个以上的有序子序列“归并”为一个有序序列。</p><p>在内部排序中，通常采用的是2-路归并排序。即将两个位置上相邻的有序子序列R[l…m]和R[m+1…n]归并为一个有序序列R[l…n]。</p><p>时间复杂度O（nlogn）。比较占用内存，但却效率高且稳定的算法。</p><h3 id="快速排序"><a href="#快速排序" class="headerlink" title="快速排序"></a>快速排序</h3><p>快速排序：1.任取一个元素（如：第一个）为中心。2.所有比它小的元素一律前放，比它大的元素一律后放，形成左右两个子表。3.对各子表重新选择中心元素并依此规则调整。4.直到每个子表元素只剩一个。</p><p>通过一趟排序，将待排序记录分割成独立的两部分，其中一个部分记录的关键字比另一部分记录的关键字小，则可分别对这两部分记录进行排序，以达到整个序列有序。</p><p>1.每一趟的子表的形成是采用从两头向中间交替式逼近法。2.由于每趟中对各子表的操作都相似，可采用递归算法。</p><p>最坏情况下，时间复杂度O（n的平方）。最优情况下，时间复杂度O（nlogn）。空间复杂度O（logn）~O（n）。关键字的比较和交换是跳跃的，不稳定。</p><h3 id="各种排序的区别"><a href="#各种排序的区别" class="headerlink" title="各种排序的区别"></a>各种排序的区别</h3><p>排序方法。。。。。。平均情况。。。。。。。。。。。最好情况。。。。。。。。。。最坏情况。。。。。辅助空间。。。。。。。。稳定性</p><p>冒泡排序。。。。。O（n的平方）。。。。。。。。。O（n）。。。。。。。。。。O（n的平方）。。。。O（1）。。。。。。。。。稳定</p><p>简单选择排序。。。O（n的平方）。。。。。。。。。O（n的平方）。。。。。。。O（n的平方）。。。。O（1）。。。。。。。。。稳定</p><p>直接插入排序。。。O（n的平方）。。。。。。。。。O（n）。。。。。。。。。。O（n的平方）。。。。O（1）。。。。。。。。。稳定</p><p>希尔排序。。。。。O（nlogn）~O（n的平方）。。。O（n的1.3次方）。。。。。。O（n的平方）。。。。O（1）。。。。。。。。不稳定</p><p>堆排序。。。。。。O（nlogn）。。。。。。。。。。O（nlogn）。。。。。。。。O（nlogn）。。。。。O（1）。。。。。。。。不稳定</p><p>归并排序。。。。。O（nlogn）。。。。。。。。。。O（nlogn）。。。。。。。。O（nlogn）。。。。。O（n）。。。。。。。。。稳定</p><p>快速排序。。。。。O（nlogn）。。。。。。。。。。O（nlogn）。。。。。。。。O（n的平方）。。。。O（logn）~O（n）。。。不稳定</p><h3 id="三种简单排序算法的移动次数比较"><a href="#三种简单排序算法的移动次数比较" class="headerlink" title="三种简单排序算法的移动次数比较"></a>三种简单排序算法的移动次数比较</h3><p>排序方法。。。。。。平均情况。。。。。。。最好情况。。。。。最坏情况</p><p>冒泡排序。。。。。。O（n的平方）。。。。。。0。。。。。。。O（n的平方）</p><p>简单选择排序。。。。O（n）。。。。。。。。。0。。。。。。。O（n）</p><p>直接插入排序。。。。O（n的平方）。。。。。。O（n）。。。。O（n的平方）</p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;h2 id=&quot;排序&quot;&gt;&lt;a href=&quot;#排序&quot; class=&quot;headerlink&quot; title=&quot;排序&quot;&gt;&lt;/a&gt;排序&lt;/h2&gt;&lt;p&gt;假设含有n个记录的序列为{r1，r2，…，rn}，其相应的关键字分别为{k1，k2，…，kn}，需确定1，2，…，n的一种排列p1，p2，…</summary>
+      
+    
+    
+    
+    
+  </entry>
   
   <entry>
     <title>第八章-查找一一《大话数据结构》</title>
@@ -397,27 +417,6 @@
       
     <summary type="html">&lt;h2 id=&quot;队列&quot;&gt;&lt;a href=&quot;#队列&quot; class=&quot;headerlink&quot; title=&quot;队列&quot;&gt;&lt;/a&gt;队列&lt;/h2&gt;&lt;p&gt;先进先出，后进后出。（队列的队指的是排队，先来的先走，后来的后走）&lt;/p&gt;
 &lt;p&gt;需要引用using System.Collections;</summary>
-      
-    
-    
-    
-    
-  </entry>
-  
-  <entry>
-    <title>堆栈的学习</title>
-    <link href="http://quruipeng666.github.io/2024/03/20/%E5%A0%86%E6%A0%88%E7%9A%84%E5%AD%A6%E4%B9%A0/"/>
-    <id>http://quruipeng666.github.io/2024/03/20/%E5%A0%86%E6%A0%88%E7%9A%84%E5%AD%A6%E4%B9%A0/</id>
-    <published>2024-03-20T12:47:23.000Z</published>
-    <updated>2024-03-20T13:04:46.000Z</updated>
-    
-    <content type="html"><![CDATA[<h2 id="堆栈"><a href="#堆栈" class="headerlink" title="堆栈"></a>堆栈</h2><p>一种数据容器，也可以叫对象集合。Stack，先进后出，后进先出的对象集合。跟队列的先进先出，后进后出相反</p><h3 id="Stack的定义"><a href="#Stack的定义" class="headerlink" title="Stack的定义"></a>Stack的定义</h3><figure class="highlight c#"><table><tr><td class="code"><pre><span class="line"><span class="comment">//初始化定义</span></span><br><span class="line">Stack st1 = <span class="keyword">new</span> Stack();</span><br><span class="line"></span><br><span class="line"><span class="comment">//压进元素，入栈操作，在栈的底部，参数为object型，类型不安全</span></span><br><span class="line">st1.Push(<span class="string">&quot;a&quot;</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">//栈的倒二位，此时在栈的顶部，理解为往杯子里放海绵垫，比如拿出海绵垫时，只能先拿最上面的（后进先出）</span></span><br><span class="line">st1.Push(<span class="string">&quot;b&quot;</span>);</span><br><span class="line"></span><br><span class="line">st1.Push(<span class="string">&quot;c&quot;</span>);</span><br><span class="line">st1.Push(<span class="string">&quot;d&quot;</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">//弹出元素，出栈操作，出来类型是object型，强转为初始定义的string型，再用v接收，此处v的值是d</span></span><br><span class="line"><span class="built_in">string</span> v = (<span class="built_in">string</span>)st1.Pop();</span><br><span class="line"></span><br><span class="line"><span class="comment">//st1.Count表示目前栈中元素的数量</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//拿到当前在栈顶元素的值，并不出栈，不执行Pop操作</span></span><br><span class="line">v = (<span class="built_in">string</span>)st1.Peek();</span><br><span class="line"></span><br><span class="line"><span class="comment">//清空</span></span><br><span class="line">st1.Clear();</span><br><span class="line"></span><br><span class="line"><span class="comment">//判断当前入参v的值是否存在于当前栈中</span></span><br><span class="line">st1.Contains(v);</span><br><span class="line"></span><br><span class="line"><span class="comment">//遍历</span></span><br><span class="line"><span class="keyword">foreach</span>(<span class="keyword">var</span> w <span class="keyword">in</span> st1)</span><br><span class="line">&#123;</span><br><span class="line"><span class="comment">//打印w</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>]]></content>
-    
-    
-      
-      
-    <summary type="html">&lt;h2 id=&quot;堆栈&quot;&gt;&lt;a href=&quot;#堆栈&quot; class=&quot;headerlink&quot; title=&quot;堆栈&quot;&gt;&lt;/a&gt;堆栈&lt;/h2&gt;&lt;p&gt;一种数据容器，也可以叫对象集合。Stack，先进后出，后进先出的对象集合。跟队列的先进先出，后进后出相反&lt;/p&gt;
-&lt;h3 id=&quot;Stack</summary>
       
     
     
