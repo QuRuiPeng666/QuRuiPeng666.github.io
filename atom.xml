@@ -6,7 +6,7 @@
   <link href="http://quruipeng666.github.io/atom.xml" rel="self"/>
   
   <link href="http://quruipeng666.github.io/"/>
-  <updated>2024-07-17T03:08:25.433Z</updated>
+  <updated>2024-08-07T14:38:34.605Z</updated>
   <id>http://quruipeng666.github.io/</id>
   
   <author>
@@ -15,6 +15,26 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>面试知识01</title>
+    <link href="http://quruipeng666.github.io/2024/08/07/%E9%9D%A2%E8%AF%95%E7%9F%A5%E8%AF%8601/"/>
+    <id>http://quruipeng666.github.io/2024/08/07/%E9%9D%A2%E8%AF%95%E7%9F%A5%E8%AF%8601/</id>
+    <published>2024-08-07T05:30:31.000Z</published>
+    <updated>2024-08-07T14:38:34.605Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="技术面试考什么"><a href="#技术面试考什么" class="headerlink" title="技术面试考什么?"></a>技术面试考什么?</h2><h3 id="语言基础"><a href="#语言基础" class="headerlink" title="语言基础"></a>语言基础</h3><p>Unity3D内置的语言是CSharp，Lua用在UI业务系统开发。</p><p>一般SLG类型游戏除了底层的内核，比如网络通讯，资源管理或者UI管理等比较重负荷的架构设计是在CSharp侧，其他的关于游戏业务的实现全部都是在Lua侧来完成的。</p><p>CSharp侧：&lt;1&gt;内存相关：1.值类型与引用类型。堆，栈它的一个存储。深拷贝，浅拷贝。你在实际项目中，对mono的这个内存有没有相关的优化，或者是native堆的。配置表的优化，例如延时加载把五十几M降到二三M。</p><p>2.装箱和拆箱：</p><p>3.GC：CSharp的CLR的GC与Unity的GC进行对比：Unity的GC是一个非分带，非压缩的，而CSharp基于CLR公共语言运行时库出来的这个解决方案，是一个分带压缩的。</p><p>对于实际项目中对于内存的优化，往往是把它切换成mono的这样一个方式来去监视它的性能的一个变化，而不是通过IL to cpp。因为mono对于内存这块至少对于开发者而言，是相对比较友好的。</p><p>因为它的一个特性是内存上去，它就下不来。借助这样一个现象，就可更好地去降低这个启动的内存。但你通过IL to cpp这个东西它可能不一定什么时间就把它释放掉了。所以在你这个监测内存数据的时候，其实是一个障碍。</p><p>当然整体从内存上而言，肯定是IL to cpp要优于mono的。在性能检测的情况下，推荐用mono。UWA专门用来处理项目的性能的数据排查的，它们的测试是基于mono的，因为mono非常方便测试。</p><p>比如说美术资源，文件格式，甚至说网络数据的收发，缓存池的大小的合理的设置，尤其涉及到字节的拷贝，都可以降内存。</p><p>可以将前置的一个大内存，在游戏启动初始化的时候，一开始把它申请出来，因为mono是非分带非压缩，如果提前申请了，就避免了一点点的申请，避免中间的这个内存的缝隙，内存碎片的数量，对于内存的优化也是有帮助的。</p><p>&lt;2&gt;面向对象（往往结合设计模式考察，比如CF的换枪，上枪换枪就相当于指令，可通过命令模式解决。比如做了哪些项目？UI管理器，战斗。用了什么设计模式？分别用在什么地方？为什么选择这个设计模式？）：1.三大特征：继承，封装，多态。2.结构体和类。3.密封类和普通类。4.接口和抽象类。5.重载和重写的区别。</p><p>&lt;3&gt;数据结构：1.Stack与Queue。2.链表。3.二叉树。4.List列表。5.Dictionary字典。</p><p>&lt;4&gt;其他：程序集。</p><p>Lua侧：&lt;1&gt;pairs和ipairs的区别</p><p>&lt;2&gt;用点和冒号，调用函数的区别</p><p>&lt;3&gt;底层实现：1.table的底层实现。2.string的底层实现。3.Lua GC算法。</p><p>&lt;4&gt;面向对象：1.Lua如何实现面向对象。2.__index和__newindex的区别。3.__rawset和__rawget的区别。4.如何实现一个只读表。</p><p>&lt;5&gt;CSharp与xLua&#x2F;toLua是如何交互的</p><p>排序：冒泡。选择。快速。</p><p>设计模式（了解4到5种）。</p><p>Unity基础：&lt;1&gt;Monobehaviour生命周期。</p><p>&lt;2&gt;碰撞器和触发器，碰撞器触发的条件。</p><p>&lt;3&gt;协程，协程的底层是怎么实现的？</p><p>&lt;4&gt;Invoke和InvokeRepeating。1.有什么区别。2.如何停止InvokeRepeating。3.InvokeRepeating被激活时设置了，但是此时将引擎对象设置为false，还会被执行么？</p><p>&lt;5&gt;可以在子线程里边操作Unity对象么</p><p>&lt;6&gt;物理更新一般在哪个系统函数里边</p><p>&lt;7&gt;在编辑器模式下，加载资源有几种方式</p><p>&lt;8&gt;AssetBundle：（1）打包考察：1.AssetBundle打包的接口叫什么。2.AssetBundle的压缩格式都有哪些，有什么区别。3.打包粒度大小的权衡。</p><p>（2）资源加载：1.加载AssetBundle有几种方式。2.从AB中，加载Asset的接口叫什么。</p><p>（3）资源卸载流程：1.AssetBundle.Unload：true&#x2F;false。2.AB中的Asset如何卸载：Resources. UnloadAsset&#x2F;UnloadUnusedAsset。3.Destroy。</p><p>&lt;9&gt;热更新：（1）基本流程考察：1.表面：简单描述下就行了。2.内核：打包逻辑，版本号管理（x点y点z点w，是怎么管理版本号的？每一位代表什么意思？什么情况下去改动某个部分的数值？）。MD5码的校验。难在打包的时候，比如现在打包出来一份资源，把资源放在CDN上，同时当然这个fileList的这个MD5码的这个文件肯定是有的，功能在不断迭代，但是线上又有一个版本，那你怎么对标你现在的资源变动和以前上个版本的资源变动它们之间的区别，怎么提取出变化的资源，怎么将这些资源再打包成AssetBundle，然后上传到CDN整个这个工具链条有没有做过。</p><p>（2）方案：1.整包：思路，优点，缺点。2.分包：思路，优点，缺点。母包，清楚概念。</p><p>比较一下提供出来的这两份FileList文件，一个是本地的，一个是CDN资源服务器上的，通过下载对比一下这两个文件它们之间的MD5码的不同，然后去更新相关的资源。</p><p>&lt;10&gt;UGUI考察。drawcall，overdraw这方面的优化。实现的时候注意的事项，比如图集有什么用？层级怎么管理的？什么时候用Rawimage什么时候用image？怎么显示3D模型在UI上？如果一个图集两个图片，那么这两个图片一定会合批吗？比如同样在处理遮罩，mask和rack the mask 2D有什么区别？为什么mask比rack the mask 2D多一个drawcall，它的底层是怎么实现的？</p><p>背包道具无限多怎么处理？无限循环列表，分页。图集与其他的耦合了，导致加载的时候被迫还要加载别的图集，导致加载时间卡顿加长。</p><p>&lt;11&gt;编译原理：1.C#。2.IL。3.IL2CPP。4.Native。一般考察IL2CPP是什么东西，为什么比mono效率高，与mono之间有什么区别？</p><p>比如说做过的各种系统，比如战斗系统，你UI系统的研发工作流是怎么做的，怎么调动美术，策划，还有业务来源，实现了这个研发工作流。UI研发是一个什么节奏？对于做过的UI结构有什么好处？有什么改进方式？你认为应该设计成什么样子？</p><p>AssetBundle打包是怎么打的？项目内的资源冗余是怎么处理的？Unity内置的资源冗余怎么处理的？Resources资源在打包之后，是不是你的同样的资源？</p><p>比如说Resources里有一个A图片，Resources之外的就是打AssetBundle的这块的美术资源这块也有A资源，在打包的时候，那A图片在内存中是几份？是两份资源。</p><p>在实际开发过程中，不要在Resources下放任何的资源。在Debug开发模式下用AssetDatabase，在实际的商业模式用AssetBundle。</p><p>不仅仅内存里会多一份，Resources里资源过多的话，也会影响手机的发布的游戏的启动速度。</p><p>有所关注关于AssetBundle资源加密的问题。通过字节偏移来取出相关的这个二进制数据，然后再把它转成AssetBundle。</p><p>思考为什么会发生，定位问题，工具：Unity Profile或者UWA或者发一个真机包出来，通过安卓466或者Xcode去观察哪些数据比较大。形成一套解决问题的方法论。</p><p>性能优化：&lt;1&gt;DrawCall：1.什么是DrawCall？2.DrawCall影响什么？3.如何降DrawCall：UI方向&#x2F;非UI方向。</p><p>&lt;2&gt;Overdraw：1.什么是Overdraw？2.Overdraw影响什么？3.如何降Overdraw：UI方向&#x2F;非UI方向。</p><p>&lt;3&gt;如何优化内存：（1）Mono方向：1.编程语言层面。2.配置表优化。</p><p>（2）Native方向：1.美术资源 预处理。2.对象池 原理。3.AssetBundle：规避AB资源打包带来的资源冗余。避免运行时资源泄露。</p><p>场景的优化，角色的优化，模型面数，遮挡剔除，引进剔除，静态批处理，动态批处理。UWA论坛：内存优化，CPU，GPU优化。</p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;h2 id=&quot;技术面试考什么&quot;&gt;&lt;a href=&quot;#技术面试考什么&quot; class=&quot;headerlink&quot; title=&quot;技术面试考什么?&quot;&gt;&lt;/a&gt;技术面试考什么?&lt;/h2&gt;&lt;h3 id=&quot;语言基础&quot;&gt;&lt;a href=&quot;#语言基础&quot; class=&quot;headerlink&quot; ti</summary>
+      
+    
+    
+    
+    
+  </entry>
   
   <entry>
     <title>第九章-排序一一《大话数据结构》</title>
@@ -396,27 +416,6 @@
       
       
     <summary type="html">&lt;h2 id=&quot;堆栈的实现&quot;&gt;&lt;a href=&quot;#堆栈的实现&quot; class=&quot;headerlink&quot; title=&quot;堆栈的实现&quot;&gt;&lt;/a&gt;堆栈的实现&lt;/h2&gt;&lt;h3 id=&quot;Unity中用VS编译脚本代码实现&quot;&gt;&lt;a href=&quot;#Unity中用VS编译脚本代码实现&quot; class</summary>
-      
-    
-    
-    
-    
-  </entry>
-  
-  <entry>
-    <title>队列的学习</title>
-    <link href="http://quruipeng666.github.io/2024/03/20/%E9%98%9F%E5%88%97%E7%9A%84%E5%AD%A6%E4%B9%A0/"/>
-    <id>http://quruipeng666.github.io/2024/03/20/%E9%98%9F%E5%88%97%E7%9A%84%E5%AD%A6%E4%B9%A0/</id>
-    <published>2024-03-20T13:06:57.000Z</published>
-    <updated>2024-03-20T13:22:52.000Z</updated>
-    
-    <content type="html"><![CDATA[<h2 id="队列"><a href="#队列" class="headerlink" title="队列"></a>队列</h2><p>先进先出，后进后出。（队列的队指的是排队，先来的先走，后来的后走）</p><p>需要引用using System.Collections;（object型）<br>需要引用using System.Collections.Generic;（泛型）</p><h3 id="Queue的定义"><a href="#Queue的定义" class="headerlink" title="Queue的定义"></a>Queue的定义</h3><figure class="highlight c#"><table><tr><td class="code"><pre><span class="line"><span class="comment">//object型的队列定义及初始化，object型需要装箱拆箱类型转换，会有一定的效率损失</span></span><br><span class="line">Queue queue = <span class="keyword">new</span> Queue();</span><br><span class="line"></span><br><span class="line"><span class="comment">//泛型队列定义</span></span><br><span class="line">Queue&lt;<span class="built_in">int</span>&gt; queue2 = <span class="keyword">new</span> Queue&lt;<span class="built_in">int</span>&gt;();</span><br><span class="line"><span class="comment">//往队列中加元素，入队操作</span></span><br><span class="line">queue.EnQueue(<span class="string">&quot;1&quot;</span>);</span><br><span class="line"></span><br><span class="line">queue2.EnQueue(<span class="number">1</span>);</span><br><span class="line">queue2.EnQueue(<span class="number">2</span>);</span><br><span class="line">queue2.EnQueue(<span class="number">3</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">//队首元素先离，队列中排最前边（最先进来的）的那个元素先出了，离队操作，此处1先离开</span></span><br><span class="line"><span class="built_in">int</span> v = queue2.Dequeue();</span><br><span class="line"></span><br><span class="line"><span class="comment">//清空</span></span><br><span class="line">queue2.Clear();</span><br><span class="line"></span><br><span class="line"><span class="comment">//判断入参的值v是否在队列中</span></span><br><span class="line">queue2.Contains(v);</span><br><span class="line"></span><br><span class="line"><span class="comment">//目前队列有几个元素queue2.Count</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//遍历</span></span><br><span class="line"><span class="keyword">foreach</span>(<span class="keyword">var</span> w <span class="keyword">in</span> queue2)</span><br><span class="line">&#123;</span><br><span class="line"><span class="comment">//打印w</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><h3 id="实际应用"><a href="#实际应用" class="headerlink" title="实际应用"></a>实际应用</h3><p>对象池，ObjectPool，一开始会预先加载一定的对象在队列里，用的时候出队，用完再入队。这样是一个循环使用的状态。</p>]]></content>
-    
-    
-      
-      
-    <summary type="html">&lt;h2 id=&quot;队列&quot;&gt;&lt;a href=&quot;#队列&quot; class=&quot;headerlink&quot; title=&quot;队列&quot;&gt;&lt;/a&gt;队列&lt;/h2&gt;&lt;p&gt;先进先出，后进后出。（队列的队指的是排队，先来的先走，后来的后走）&lt;/p&gt;
-&lt;p&gt;需要引用using System.Collections;</summary>
       
     
     
