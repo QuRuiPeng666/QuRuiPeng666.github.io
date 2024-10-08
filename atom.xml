@@ -6,7 +6,7 @@
   <link href="http://quruipeng666.github.io/atom.xml" rel="self"/>
   
   <link href="http://quruipeng666.github.io/"/>
-  <updated>2024-08-09T10:54:17.001Z</updated>
+  <updated>2024-08-16T14:14:00.185Z</updated>
   <id>http://quruipeng666.github.io/</id>
   
   <author>
@@ -15,6 +15,26 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Lua面试知识</title>
+    <link href="http://quruipeng666.github.io/2024/08/10/Lua%E9%9D%A2%E8%AF%95%E7%9F%A5%E8%AF%86/"/>
+    <id>http://quruipeng666.github.io/2024/08/10/Lua%E9%9D%A2%E8%AF%95%E7%9F%A5%E8%AF%86/</id>
+    <published>2024-08-10T09:22:09.000Z</published>
+    <updated>2024-08-16T14:14:00.185Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="Lua面试知识"><a href="#Lua面试知识" class="headerlink" title="Lua面试知识"></a>Lua面试知识</h2><h3 id="table"><a href="#table" class="headerlink" title="table"></a>table</h3><p>1.基本原理</p><p>2.非空判断</p><p>3.获取元素长度</p><p>4.遍历-pairs，ipairs</p><h3 id="元表"><a href="#元表" class="headerlink" title="元表"></a>元表</h3><p>1.设置与获取</p><p>2.元方法：__index，__newindex，__add，__call，__tostring，点调用和冒号调用</p><h3 id="闭包"><a href="#闭包" class="headerlink" title="闭包"></a>闭包</h3><p>function 方法，函数</p><p>function 可以视为变量，可以当作参数，允许匿名定义</p><p>function（param）<body> end 函数的构造式</p><p>允许 运行期创建，第一类值（不是提前预先编译好的，而是运行到那才创建的）</p><p>语法域 词法定界：一个函数可以嵌套在另一个函数中，内部函数可以访问外部函数的局部变量。</p><p>闭包的概念和理解：lua在编译一个函数的时候，会生成一个原型prototype。其中包含了函数体对应的虚拟机指令，函数体中的常量值，和一些调试信息。在运行的时候，当lua执行function（param）<body> end，会创建一个新的数据对象，对象中包含了相应函数原型的引用以及一个数组（包含了所有upvalue引用，upvalue非全局变量），这个数据对象称为闭包。</p><p>闭包的作用：1.高阶函数的参数：table.sort（t，function（t1，t2）return t1.param &gt; t2.param end）。2.重写（类似于C#面向对象的重写） io.open  –案例   local oldOpen&#x3D;io.open    local accessOk &#x3D; function（filename，mode）–检查文件 校验文件方法 end  io.open &#x3D; function（filename，mode） if accessOk（filename，mode）then return oldOpen（filename，mode） else return nil，”校验失败” end end。</p><p>3.实现迭代器：function values(t) local i &#x3D; 0 return function() i &#x3D; i + 1 return t[i] end end t&#x3D;{9,8,7,6,5,4} iter &#x3D; values(t) print(iter()) print(iter()) print(iter()) print(iter())</p><h3 id="lua的数据类型"><a href="#lua的数据类型" class="headerlink" title="lua的数据类型"></a>lua的数据类型</h3><p>table 表，function 函数，nil，boolean，number 整数 浮点数，string 字符串，userdata C语言里面有一些类型在lua中不存在，thread 线程。</p><h3 id="C和lua的互相调用"><a href="#C和lua的互相调用" class="headerlink" title="C和lua的互相调用"></a>C和lua的互相调用</h3><p>lua语言本身，lua语言是用C语言开发的，C语言和lua可以直接 通讯。提供一系列的调用接口，让C与Lua互相调用。</p><p>C#调用C，C语言调用Lua（Lua的虚拟栈，从底到顶索引1，2，…，n，从顶到底-1，-2，…，-n）。</p><p>XLua插件，封装了一层C#调用C语言的接口。</p><h3 id="lua与Unity的GC"><a href="#lua与Unity的GC" class="headerlink" title="lua与Unity的GC"></a>lua与Unity的GC</h3><h3 id="热更新机制"><a href="#热更新机制" class="headerlink" title="热更新机制"></a>热更新机制</h3><h3 id="lua协程"><a href="#lua协程" class="headerlink" title="lua协程"></a>lua协程</h3><h3 id="模块与包"><a href="#模块与包" class="headerlink" title="模块与包"></a>模块与包</h3>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;h2 id=&quot;Lua面试知识&quot;&gt;&lt;a href=&quot;#Lua面试知识&quot; class=&quot;headerlink&quot; title=&quot;Lua面试知识&quot;&gt;&lt;/a&gt;Lua面试知识&lt;/h2&gt;&lt;h3 id=&quot;table&quot;&gt;&lt;a href=&quot;#table&quot; class=&quot;headerlink&quot; ti</summary>
+      
+    
+    
+    
+    
+  </entry>
   
   <entry>
     <title>面试知识02</title>
@@ -395,27 +415,6 @@
       
     <summary type="html">&lt;h2 id=&quot;数据结构绪论&quot;&gt;&lt;a href=&quot;#数据结构绪论&quot; class=&quot;headerlink&quot; title=&quot;数据结构绪论&quot;&gt;&lt;/a&gt;数据结构绪论&lt;/h2&gt;&lt;p&gt;此为《大话数据结构》书的第一章，数据结构绪论。鄙人正在学习此书中…特此留笔记录&lt;/p&gt;
 &lt;h3 id=&quot;数据</summary>
-      
-    
-    
-    
-    
-  </entry>
-  
-  <entry>
-    <title>实现队列</title>
-    <link href="http://quruipeng666.github.io/2024/03/20/%E5%AE%9E%E7%8E%B0%E9%98%9F%E5%88%97/"/>
-    <id>http://quruipeng666.github.io/2024/03/20/%E5%AE%9E%E7%8E%B0%E9%98%9F%E5%88%97/</id>
-    <published>2024-03-20T13:47:51.000Z</published>
-    <updated>2024-03-20T14:12:24.000Z</updated>
-    
-    <content type="html"><![CDATA[<h2 id="队列的实现"><a href="#队列的实现" class="headerlink" title="队列的实现"></a>队列的实现</h2><p>主要使用链表实现。这是简单的实现，其他的Clear,Contains等等方法自己实践</p><h3 id="Unity中用VS编译脚本代码实现"><a href="#Unity中用VS编译脚本代码实现" class="headerlink" title="Unity中用VS编译脚本代码实现"></a>Unity中用VS编译脚本代码实现</h3><figure class="highlight c#"><table><tr><td class="code"><pre><span class="line"><span class="keyword">using</span> System.Collections;</span><br><span class="line"><span class="keyword">using</span> System.Collections.Generic;</span><br><span class="line"><span class="keyword">using</span> UnityEngine;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> 实现队列 : <span class="title">MonoBehaviour</span></span><br><span class="line">&#123;</span><br><span class="line"><span class="keyword">class</span> <span class="title">MyQueue</span></span><br><span class="line">&#123;</span><br><span class="line"><span class="comment">//定义队中元素的数据结构</span></span><br><span class="line"><span class="keyword">class</span> <span class="title">QueueData</span></span><br><span class="line">&#123;</span><br><span class="line"><span class="comment">//队中元素的值</span></span><br><span class="line"><span class="keyword">public</span> QueueData nextItem;</span><br><span class="line"><span class="comment">//队中元素类型</span></span><br><span class="line"><span class="keyword">public</span> <span class="built_in">object</span> topData;</span><br><span class="line"></span><br><span class="line"><span class="comment">//构造函数，一般作用是让参数传进来给这个定义数据结构的变量赋值</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="title">QueueData</span>(<span class="params">QueueData last, <span class="built_in">object</span> data</span>)</span></span><br><span class="line">&#123;</span><br><span class="line"><span class="comment">//上一个进的元素（先出队）的下一个元素是当前新进的元素</span></span><br><span class="line">last.nextItem = <span class="keyword">this</span>;</span><br><span class="line"><span class="keyword">this</span>.topData = data;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//重构</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="title">QueueData</span>(<span class="params"><span class="built_in">object</span> data</span>)</span></span><br><span class="line">&#123;</span><br><span class="line"><span class="keyword">this</span>.topData = data;</span><br><span class="line">&#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//定义队首元素</span></span><br><span class="line">QueueData top;</span><br><span class="line"><span class="comment">//当前定义的上一个元素</span></span><br><span class="line">QueueData lastData;</span><br><span class="line"></span><br><span class="line"><span class="comment">//入队Enqueue方法</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">Enqueue</span>(<span class="params"><span class="built_in">object</span> data</span>)</span></span><br><span class="line">&#123;</span><br><span class="line"><span class="comment">//判断当前是第一个入队的元素</span></span><br><span class="line"><span class="keyword">if</span>(top == <span class="literal">null</span>)</span><br><span class="line">&#123;</span><br><span class="line"><span class="comment">//队首,更新</span></span><br><span class="line">top = <span class="keyword">new</span> QueueData(data);</span><br><span class="line"><span class="comment">//把队首赋值给当前定义的上一个元素</span></span><br><span class="line">lastData = top;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//不是第一个入队的元素，不再是队首元素</span></span><br><span class="line"><span class="keyword">else</span></span><br><span class="line">&#123;</span><br><span class="line"><span class="comment">//每一次新进的元素都会更新lastData</span></span><br><span class="line">lastData = <span class="keyword">new</span> QueueData(top, data);</span><br><span class="line">&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//出队Dequeue方法，注意没参数，返回object型</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="built_in">object</span> <span class="title">Dequeue</span>()</span></span><br><span class="line">&#123;</span><br><span class="line"><span class="comment">//队首元素的值，用来出队的</span></span><br><span class="line"><span class="built_in">object</span> rsl = top.topData;</span><br><span class="line"><span class="comment">//入队的地方记录了nextItem，它的下一个item就自然变成了下一个要出的元素，就把它放在队首了</span></span><br><span class="line">top = top.nextItem;</span><br><span class="line"><span class="keyword">return</span> rsl;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//简单使用下</span></span><br><span class="line"><span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">Start</span>()</span></span><br><span class="line">&#123;</span><br><span class="line"><span class="comment">//定义初始化</span></span><br><span class="line">MyQueue mq = <span class="keyword">new</span> MyQueue();</span><br><span class="line"></span><br><span class="line"><span class="comment">//入队</span></span><br><span class="line">mq.Enqueue(<span class="number">1</span>);</span><br><span class="line">mq.Enqueue(<span class="number">2</span>);</span><br><span class="line">mq.Enqueue(<span class="number">3</span>);</span><br><span class="line">mq.Enqueue(<span class="number">4</span>);</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">//出队并打印</span></span><br><span class="line">Debug.Log(mq.Dequeue());   <span class="comment">//1</span></span><br><span class="line">Debug.Log(mq.Dequeue());   <span class="comment">//2</span></span><br><span class="line">Debug.Log(mq.Dequeue());   <span class="comment">//3</span></span><br><span class="line">Debug.Log(mq.Dequeue());   <span class="comment">//4</span></span><br><span class="line">&#125;</span><br><span class="line">&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
-    
-    
-      
-      
-    <summary type="html">&lt;h2 id=&quot;队列的实现&quot;&gt;&lt;a href=&quot;#队列的实现&quot; class=&quot;headerlink&quot; title=&quot;队列的实现&quot;&gt;&lt;/a&gt;队列的实现&lt;/h2&gt;&lt;p&gt;主要使用链表实现。这是简单的实现，其他的Clear,Contains等等方法自己实践&lt;/p&gt;
-&lt;h3 id=&quot;Uni</summary>
       
     
     
